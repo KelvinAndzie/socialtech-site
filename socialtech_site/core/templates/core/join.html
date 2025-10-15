@@ -1,0 +1,202 @@
+nul not found
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Join Us - SocialTech{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">Join Our Team</h1>
+                <p class="lead">Be part of something amazing. Build the future with us.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Join Us Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Work With Us?</h2>
+            <p class="text-muted">Great reasons to join the SocialTech family</p>
+        </div>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Innovation Culture</h5>
+                        <p class="text-muted">Work on cutting-edge projects and explore new technologies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Career Growth</h5>
+                        <p class="text-muted">Continuous learning opportunities and clear career progression paths.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Work-Life Balance</h5>
+                        <p class="text-muted">Flexible working hours and remote work options available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Application Form Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <h3 class="fw-bold mb-4 text-center">Apply Now</h3>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="first_name" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="last_name" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="position" class="form-label">Position Applied For *</label>
+                                    <select class="form-select" id="position" name="position" required>
+                                        <option value="">Select a position...</option>
+                                        <option value="frontend">Frontend Developer</option>
+                                        <option value="backend">Backend Developer</option>
+                                        <option value="fullstack">Full Stack Developer</option>
+                                        <option value="mobile">Mobile Developer</option>
+                                        <option value="designer">UI/UX Designer</option>
+                                        <option value="devops">DevOps Engineer</option>
+                                        <option value="pm">Project Manager</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="experience" class="form-label">Years of Experience *</label>
+                                    <select class="form-select" id="experience" name="experience" required>
+                                        <option value="">Select experience...</option>
+                                        <option value="0-1">0-1 years</option>
+                                        <option value="1-3">1-3 years</option>
+                                        <option value="3-5">3-5 years</option>
+                                        <option value="5+">5+ years</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                                    <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                                </div>
+                                <div class="col-12">
+                                    <label for="portfolio" class="form-label">Portfolio/GitHub URL</label>
+                                    <input type="url" class="form-control" id="portfolio" name="portfolio" placeholder="https://github.com/yourusername">
+                                </div>
+                                <div class="col-12">
+                                    <label for="cover_letter" class="form-label">Cover Letter *</label>
+                                    <textarea class="form-control" id="cover_letter" name="cover_letter" rows="5" required placeholder="Tell us why you'd be a great fit for SocialTech..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="resume" class="form-label">Upload Resume/CV *</label>
+                                    <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                    <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            I agree to the terms and conditions and privacy policy *
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Application
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Open Positions Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Current Openings</h2>
+            <p class="text-muted">Explore our available positions</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">Senior Full Stack Developer</h5>
+                                <p class="text-muted mb-0"><i class="fas fa-map-marker-alt me-2"></i>Accra, Ghana</p>
+                            </div>
+                            <span class="badge bg-primary">Full-time</span>
+                        </div>
+                        <p class="text-muted mb-3">
+                            We're looking for an experienced full stack developer proficient in Django and React.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge bg-light text-dark">Django</span>
+                            <span class="badge bg-light text-dark">React</span>
+                            <span class="badge bg-light text-dark">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">UI/UX Designer</h5>
+                                <p class="text-muted mb-0"><i class="fas fa-map-marker-alt me-2"></i>Remote</p>
+                            </div>
+                            <span class="badge bg-success">Remote</span>
+                        </div>
+                        <p class="text-muted mb-3">
+                            Creative designer needed to craft beautiful user experiences for our clients.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <span class="badge bg-light text-dark">Figma</span>
+                            <span class="badge bg-light text-dark">Adobe XD</span>
+                            <span class="badge bg-light text-dark">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

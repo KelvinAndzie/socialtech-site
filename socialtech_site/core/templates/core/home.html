@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home - SocialTech{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4">
+                    Welcome to <span class="text-primary">SocialTech</span>
+                </h1>
+                <p class="lead mb-4">
+                    We create cutting-edge digital solutions that transform businesses 
+                    and connect communities. Let's build something amazing together.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{% url 'services' %}" class="btn btn-primary btn-lg">
+                        Our Services
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <i class="fas fa-laptop-code fa-10x text-primary opacity-75"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose Us</h2>
+            <p class="text-muted">We deliver excellence in every project</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Fast Delivery</h5>
+                        <p class="text-muted">Quick turnaround times without compromising quality</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Expert Team</h5>
+                        <p class="text-muted">Skilled professionals dedicated to your success</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Reliable Support</h5>
+                        <p class="text-muted">24/7 support to keep your business running smoothly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
+        <p class="lead mb-4">Let's discuss how we can help bring your ideas to life</p>
+        <a href="{% url 'join' %}" class="btn btn-light btn-lg">Join Our Team</a>
+    </div>
+</section>
+{% endblock %}
