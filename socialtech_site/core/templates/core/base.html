@@ -19,10 +19,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2BB6E0;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
-                <i class="fas fa-code me-2"></i>SocialTech
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="{% url 'home' %}">
+                <img src="{% static 'core/images/socialtech-logo.png' %}" alt="SocialTech Logo" style="height: 40px; margin-right: 10px;">
+                <span>SocialTech</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +46,7 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light text-primary ms-lg-2" href="{% url 'join' %}">Join Us</a>
+                        <a class="nav-link btn btn-light ms-lg-2" style="color: #2BB6E0; font-weight: 600;" href="{% url 'join' %}">Join Us</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +59,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+    <footer class="pt-5 pb-3 mt-5" style="background-color: #1E2A38;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
