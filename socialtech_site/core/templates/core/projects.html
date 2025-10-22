@@ -1,159 +1,417 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Projects - SocialTech{% endblock %}
+{% block title %}Success Stories - SocialTech Innovations{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="hero-section bg-primary text-white">
-    <div class="container">
-        <div class="row align-items-center py-5">
+<!-- Hero Section with Background Image -->
+<section class="hero-section position-relative text-white d-flex align-items-center" 
+         style="background: url({% static 'core/images/projects-hero.jpg' %}) center/cover no-repeat; min-height: 70vh;">
+    
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" 
+         style="background: rgba(43, 182, 224, 0.85); opacity: 50%; z-index: 1;"></div>
+    
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-3">Our Projects</h1>
-                <p class="lead">Showcasing our best work and success stories</p>
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                    Our Success Stories
+                </h1>
+                <p class="lead mb-0 animate__animated animate__fadeInUp animate__delay-1s">
+                    Real impact from organizations we've empowered with technology solutions
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Projects Section -->
+<!-- Mission Statement -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="fw-bold mb-4">Transforming Organizations, Amplifying Impact</h2>
+                <p class="lead text-muted">
+                    Every organization has a unique story. Here's how our technology solutions have helped 
+                    nonprofits, schools, and social enterprises achieve their missions and create lasting change.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects with Images (Alternating Layout) -->
 <section class="py-5">
     <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Featured Success Stories</h2>
+            <p class="text-muted">In-depth looks at transformative partnerships</p>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="row align-items-center mb-5 project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/education-project.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="Youth Education Initiative">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #2BB6E0;">Education</span>
+                <h3 class="fw-bold mt-3">Youth Empowerment Initiative</h3>
+                <p class="text-muted">
+                    Partnering with a youth-focused NGO, we implemented a cloud-based Learning Management 
+                    System (LMS) that revolutionized their approach to education delivery. During the 
+                    pandemic, this platform became a lifeline for 5,000+ students across 15 rural schools.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #2BB6E0;">Impact Metrics:</strong>
+                    <ul class="mt-2">
+                        <li>500% increase in student reach</li>
+                        <li>70% reduction in administrative costs</li>
+                        <li>15 schools connected to digital learning</li>
+                        <li>Enhanced teacher training programs</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-cloud me-1"></i> Cloud Migration</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-graduation-cap me-1"></i> LMS Platform</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-chalkboard-teacher me-1"></i> Training</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/healthcare-project.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="Community Health Network">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #8B4FBF;">Healthcare</span>
+                <h3 class="fw-bold mt-3">Community Health Network</h3>
+                <p class="text-muted">
+                    We developed a comprehensive mobile application for community health workers to track 
+                    patient visits, manage health records, and coordinate care across 50 rural clinics. 
+                    This solution has dramatically improved healthcare delivery in underserved communities.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #8B4FBF;">Impact Metrics:</strong>
+                    <ul class="mt-2">
+                        <li>12,000 patients tracked monthly</li>
+                        <li>85% improvement in data accuracy</li>
+                        <li>Real-time health outcome monitoring</li>
+                        <li>50 clinics digitally connected</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-mobile-alt me-1"></i> Mobile App</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-database me-1"></i> Patient Database</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-chart-line me-1"></i> Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="row align-items-center mb-5 project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/donation-project.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="Aid Distribution Foundation">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #2BB6E0;">Relief & Development</span>
+                <h3 class="fw-bold mt-3">Aid Distribution Foundation</h3>
+                <p class="text-muted">
+                    Implemented a robust donor management system with secure database infrastructure to 
+                    streamline fundraising operations, improve donor relationships, and ensure complete 
+                    transparency with stakeholders and regulatory bodies.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #2BB6E0;">Impact Metrics:</strong>
+                    <ul class="mt-2">
+                        <li>$2M+ in donations tracked and managed</li>
+                        <li>40% increase in donor retention rate</li>
+                        <li>Automated reporting and compliance</li>
+                        <li>Enhanced donor communication</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-hands-helping me-1"></i> CRM System</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-shield-alt me-1"></i> Security</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-file-invoice me-1"></i> Reporting</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/environment-project.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="Green Earth Conservancy">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #8B4FBF;">Environment</span>
+                <h3 class="fw-bold mt-3">Green Earth Conservancy</h3>
+                <p class="text-muted">
+                    Built a sophisticated GIS-enabled platform for tracking reforestation efforts, engaging 
+                    volunteers, and measuring environmental impact. The system uses GPS tracking to monitor 
+                    tree planting progress and survival rates in real-time.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #8B4FBF;">Impact Metrics:</strong>
+                    <ul class="mt-2">
+                        <li>2,500 volunteers mobilized and coordinated</li>
+                        <li>100,000+ trees planted and tracked</li>
+                        <li>Real-time project dashboards</li>
+                        <li>Interactive impact mapping</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-map-marked-alt me-1"></i> GIS Platform</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-globe me-1"></i> Web Application</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-users me-1"></i> Volunteer Management</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5: Church Management System -->
+        <div class="row align-items-center mb-5 project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/church-management.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="Church Management System">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #2BB6E0;">Faith-Based</span>
+                <span class="badge mb-2 ms-2" style="background-color: #198754;">In Development</span>
+                <h3 class="fw-bold mt-3">Church Management System</h3>
+                <p class="text-muted">
+                    Developing a comprehensive platform to help local churches manage their members, track donations 
+                    and tithes, schedule events, and improve communication with their congregation. This affordable 
+                    solution enables churches to focus more on their spiritual mission while maintaining organized operations.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #2BB6E0;">Key Features:</strong>
+                    <ul class="mt-2">
+                        <li>Member database with family groupings</li>
+                        <li>Online donation & tithe tracking</li>
+                        <li>Event calendar & resource booking</li>
+                        <li>SMS/Email communication system</li>
+                        <li>Ministry & volunteer management</li>
+                        <li>Automated financial reporting</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-church me-1"></i> Church Management</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-donate me-1"></i> Donation Tracking</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-calendar-alt me-1"></i> Events</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 6: School Management System -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
+            <div class="col-md-6">
+                <div class="project-img-wrapper">
+                    <img src="{% static 'core/images/school-management.jpg' %}" 
+                         class="img-fluid rounded shadow-sm" 
+                         alt="School Management System">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <span class="badge mb-2" style="background-color: #8B4FBF;">Education</span>
+                <span class="badge mb-2 ms-2" style="background-color: #198754;">In Development</span>
+                <h3 class="fw-bold mt-3">School Management System</h3>
+                <p class="text-muted">
+                    Creating an all-in-one platform for schools to manage students, staff, academics, and finances. 
+                    This system streamlines administrative tasks, improves parent-teacher communication, and provides 
+                    real-time insights into student performance and school operations.
+                </p>
+                <div class="mb-3">
+                    <strong style="color: #8B4FBF;">Key Features:</strong>
+                    <ul class="mt-2">
+                        <li>Student enrollment & record management</li>
+                        <li>Attendance tracking with parent alerts</li>
+                        <li>Grade recording & report card generation</li>
+                        <li>Fee management & payment tracking</li>
+                        <li>Staff & teacher management</li>
+                        <li>Parent portal & communication hub</li>
+                    </ul>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-light text-dark"><i class="fas fa-school me-1"></i> School Management</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-user-graduate me-1"></i> Student Portal</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-clipboard-check me-1"></i> Attendance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Projects Grid -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">More Success Stories</h2>
+            <p class="text-muted">Quick highlights from other impactful partnerships</p>
+        </div>
         <div class="row g-4">
-            <!-- Project 1 -->
+            <!-- Story 5 -->
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-primary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-shopping-cart fa-5x opacity-50"></i>
+                    <div class="position-relative" style="height: 200px;">
+                        <img src="{% static 'core/images/women-empowerment.jpg' %}" 
+                             class="w-100 h-100 object-fit-cover" 
+                             alt="Women's Empowerment Network">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" 
+                             style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
                     </div>
                     <div class="card-body">
-                        <span class="badge bg-primary mb-2">E-commerce</span>
-                        <h5 class="fw-bold mb-3">ShopHub Online Store</h5>
+                        <span class="badge mb-2" style="background-color: #2BB6E0;">Women's Rights</span>
+                        <h5 class="fw-bold mb-3">Women's Empowerment Network</h5>
                         <p class="text-muted mb-3">
-                            A full-featured e-commerce platform with payment integration, 
-                            inventory management, and real-time analytics.
+                            Provided cybersecurity training and secure communication tools for protecting 
+                            sensitive beneficiary data and ensuring safe digital operations.
                         </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Django</span>
-                            <span class="badge bg-light text-dark">React</span>
-                            <span class="badge bg-light text-dark">PostgreSQL</span>
+                        <div class="mb-3">
+                            <strong style="color: #2BB6E0;">Impact:</strong>
+                            <ul class="small mt-2">
+                                <li>100% data breach prevention</li>
+                                <li>Secure case management system</li>
+                                <li>30+ staff trained in digital security</li>
+                            </ul>
                         </div>
-                        <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Story 6 -->
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-success text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-heartbeat fa-5x opacity-50"></i>
+                    <div class="position-relative" style="height: 200px;">
+                        <img src="{% static 'core/images/child-welfare.jpg' %}" 
+                             class="w-100 h-100 object-fit-cover" 
+                             alt="Children's Hope Foundation">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" 
+                             style="background: linear-gradient(to bottom, rgba(139,79,191,0.3), rgba(139,79,191,0.7));"></div>
                     </div>
                     <div class="card-body">
-                        <span class="badge bg-success mb-2">Healthcare</span>
-                        <h5 class="fw-bold mb-3">MediCare Portal</h5>
+                        <span class="badge mb-2" style="background-color: #8B4FBF;">Child Welfare</span>
+                        <h5 class="fw-bold mb-3">Children's Hope Foundation</h5>
                         <p class="text-muted mb-3">
-                            Patient management system with appointment scheduling, 
-                            electronic health records, and telemedicine features.
+                            Migrated legacy systems to modern cloud infrastructure, enabling seamless 
+                            remote work and improving collaboration across 10 regional offices.
                         </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Python</span>
-                            <span class="badge bg-light text-dark">Vue.js</span>
-                            <span class="badge bg-light text-dark">MongoDB</span>
+                        <div class="mb-3">
+                            <strong style="color: #8B4FBF;">Impact:</strong>
+                            <ul class="small mt-2">
+                                <li>60% cost savings on IT operations</li>
+                                <li>Seamless remote work capabilities</li>
+                                <li>Improved staff productivity by 45%</li>
+                            </ul>
                         </div>
-                        <a href="#" class="btn btn-outline-success btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
+            <!-- Story 7 -->
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-warning text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-graduation-cap fa-5x opacity-50"></i>
+                    <div class="position-relative" style="height: 200px;">
+                        <img src="{% static 'core/images/agriculture-tech.jpg' %}" 
+                             class="w-100 h-100 object-fit-cover" 
+                             alt="SmartFarm Initiative">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" 
+                             style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
                     </div>
                     <div class="card-body">
-                        <span class="badge bg-warning mb-2">Education</span>
-                        <h5 class="fw-bold mb-3">LearnHub LMS</h5>
+                        <span class="badge mb-2" style="background-color: #2BB6E0;">Agriculture</span>
+                        <h5 class="fw-bold mb-3">SmartFarm Initiative</h5>
                         <p class="text-muted mb-3">
-                            Learning management system with course creation, 
-                            student tracking, and interactive assessments.
+                            Developed mobile app connecting farmers with market data, weather forecasts, 
+                            and agricultural best practices to optimize yields and reduce waste.
                         </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Django</span>
-                            <span class="badge bg-light text-dark">Angular</span>
-                            <span class="badge bg-light text-dark">MySQL</span>
+                        <div class="mb-3">
+                            <strong style="color: #2BB6E0;">Impact:</strong>
+                            <ul class="small mt-2">
+                                <li>3,000+ farmers empowered</li>
+                                <li>30% increase in crop yields</li>
+                                <li>Direct market access established</li>
+                            </ul>
                         </div>
-                        <a href="#" class="btn btn-outline-warning btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4 -->
+            <!-- Story 8: Church Management Preview -->
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-info text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-building fa-5x opacity-50"></i>
+                    <div class="position-relative" style="height: 200px;">
+                        <img src="{% static 'core/images/church-card.jpg' %}" 
+                             class="w-100 h-100 object-fit-cover" 
+                             alt="Church Management System">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" 
+                             style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
                     </div>
                     <div class="card-body">
-                        <span class="badge bg-info mb-2">Real Estate</span>
-                        <h5 class="fw-bold mb-3">PropertyPro Listings</h5>
+                        <span class="badge mb-2" style="background-color: #2BB6E0;">Faith-Based</span>
+                        <span class="badge mb-2" style="background-color: #198754;">Coming Soon</span>
+                        <h5 class="fw-bold mb-3">Church Management Platform</h5>
                         <p class="text-muted mb-3">
-                            Real estate platform with property listings, virtual tours, 
-                            and advanced search capabilities.
+                            Comprehensive system for churches to manage members, donations, events, 
+                            and ministries - helping spiritual leaders focus on their calling.
                         </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Node.js</span>
-                            <span class="badge bg-light text-dark">React</span>
-                            <span class="badge bg-light text-dark">Firebase</span>
+                        <div class="mb-3">
+                            <strong style="color: #2BB6E0;">Features:</strong>
+                            <ul class="small mt-2">
+                                <li>Member & family management</li>
+                                <li>Donation tracking & reporting</li>
+                                <li>Event scheduling & communication</li>
+                            </ul>
                         </div>
-                        <a href="#" class="btn btn-outline-info btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 5 -->
+            <!-- Story 9: School Management Preview -->
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-danger text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-utensils fa-5x opacity-50"></i>
+                    <div class="position-relative" style="height: 200px;">
+                        <img src="{% static 'core/images/school-card.jpg' %}" 
+                             class="w-100 h-100 object-fit-cover" 
+                             alt="School Management System">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" 
+                             style="background: linear-gradient(to bottom, rgba(139,79,191,0.3), rgba(139,79,191,0.7));"></div>
                     </div>
                     <div class="card-body">
-                        <span class="badge bg-danger mb-2">Food & Beverage</span>
-                        <h5 class="fw-bold mb-3">FoodExpress Delivery</h5>
+                        <span class="badge mb-2" style="background-color: #8B4FBF;">Education</span>
+                        <span class="badge mb-2" style="background-color: #198754;">Coming Soon</span>
+                        <h5 class="fw-bold mb-3">School Management Platform</h5>
                         <p class="text-muted mb-3">
-                            Food delivery app with real-time tracking, restaurant management, 
-                            and seamless payment integration.
+                            All-in-one solution for schools to manage students, academics, attendance, 
+                            fees, and parent communication efficiently.
                         </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Flutter</span>
-                            <span class="badge bg-light text-dark">Laravel</span>
-                            <span class="badge bg-light text-dark">Redis</span>
+                        <div class="mb-3">
+                            <strong style="color: #8B4FBF;">Features:</strong>
+                            <ul class="small mt-2">
+                                <li>Student & staff management</li>
+                                <li>Attendance & grade tracking</li>
+                                <li>Fee management & parent portal</li>
+                            </ul>
                         </div>
-                        <a href="#" class="btn btn-outline-danger btn-sm">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-chart-line fa-5x opacity-50"></i>
-                    </div>
-                    <div class="card-body">
-                        <span class="badge bg-secondary mb-2">Finance</span>
-                        <h5 class="fw-bold mb-3">FinTrack Analytics</h5>
-                        <p class="text-muted mb-3">
-                            Financial analytics dashboard with data visualization, 
-                            reporting, and predictive insights.
-                        </p>
-                        <div class="d-flex gap-2 flex-wrap mb-3">
-                            <span class="badge bg-light text-dark">Python</span>
-                            <span class="badge bg-light text-dark">D3.js</span>
-                            <span class="badge bg-light text-dark">AWS</span>
-                        </div>
-                        <a href="#" class="btn btn-outline-secondary btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
@@ -161,42 +419,220 @@
     </div>
 </section>
 
-<!-- Stats Section -->
+<!-- Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">What Our Partners Say</h2>
+            <p class="text-muted">Hear directly from the leaders we've worked with</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x" style="color: #2BB6E0;"></i>
+                        </div>
+                        <p class="mb-4">
+                            "SocialTech transformed our operations. We went from paper-based systems 
+                            to a fully digital platform that has doubled our efficiency and reach. Their understanding 
+                            of nonprofit challenges made all the difference."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 50px; height: 50px; background-color: #2BB6E0;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Sarah Owusu</h6>
+                                <small class="text-muted">Executive Director<br>Youth Empowerment Initiative</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x" style="color: #8B4FBF;"></i>
+                        </div>
+                        <p class="mb-4">
+                            "The team at SocialTech didn't just provide technology—they understood our 
+                            mission and built solutions that truly serve our community. The mobile app has been game-changing 
+                            for our health workers."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 50px; height: 50px; background-color: #8B4FBF;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Dr. Emmanuel Addo</h6>
+                                <small class="text-muted">Medical Director<br>Community Health Network</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x" style="color: #2BB6E0;"></i>
+                        </div>
+                        <p class="mb-4">
+                            "Thanks to SocialTech's affordable solutions, we now have enterprise-level 
+                            technology that would have been impossible on our nonprofit budget. They made the complex simple."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 50px; height: 50px; background-color: #2BB6E0;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Grace Mensah</h6>
+                                <small class="text-muted">Founder & CEO<br>Aid Distribution Foundation</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stats -->
 <section class="py-5 bg-light">
     <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Collective Impact</h2>
+            <p class="text-muted">Numbers that tell the story of transformation</p>
+        </div>
         <div class="row text-center">
             <div class="col-md-3 mb-4">
-                <i class="fas fa-project-diagram fa-3x text-primary mb-3"></i>
-                <h2 class="fw-bold">150+</h2>
-                <p class="text-muted">Projects Completed</p>
+                <div class="p-4">
+                    <i class="fas fa-building fa-3x mb-3" style="color: #2BB6E0;"></i>
+                    <h2 class="fw-bold counter">500</h2>
+                    <p class="text-muted">Organizations Served</p>
+                </div>
             </div>
             <div class="col-md-3 mb-4">
-                <i class="fas fa-users fa-3x text-primary mb-3"></i>
-                <h2 class="fw-bold">80+</h2>
-                <p class="text-muted">Happy Clients</p>
+                <div class="p-4">
+                    <i class="fas fa-users fa-3x mb-3" style="color: #8B4FBF;"></i>
+                    <h2 class="fw-bold">1M+</h2>
+                    <p class="text-muted">Beneficiaries Reached</p>
+                </div>
             </div>
             <div class="col-md-3 mb-4">
-                <i class="fas fa-award fa-3x text-primary mb-3"></i>
-                <h2 class="fw-bold">25+</h2>
-                <p class="text-muted">Awards Won</p>
+                <div class="p-4">
+                    <i class="fas fa-globe-africa fa-3x mb-3" style="color: #2BB6E0;"></i>
+                    <h2 class="fw-bold counter">25</h2>
+                    <p class="text-muted">Countries Served</p>
+                </div>
             </div>
             <div class="col-md-3 mb-4">
-                <i class="fas fa-clock fa-3x text-primary mb-3"></i>
-                <h2 class="fw-bold">5+</h2>
-                <p class="text-muted">Years Experience</p>
+                <div class="p-4">
+                    <i class="fas fa-dollar-sign fa-3x mb-3" style="color: #8B4FBF;"></i>
+                    <h2 class="fw-bold">$5M+</h2>
+                    <p class="text-muted">Tech Value Delivered</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sectors We Serve -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h3 class="fw-bold">Sectors We Serve</h3>
+            <p class="text-muted">Supporting diverse causes across multiple sectors</p>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-graduation-cap fa-2x mb-2" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold mb-0">Education</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-heartbeat fa-2x mb-2" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold mb-0">Healthcare</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-leaf fa-2x mb-2" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold mb-0">Environment</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-hands-helping fa-2x mb-2" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold mb-0">Relief & Aid</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-balance-scale fa-2x mb-2" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold mb-0">Human Rights</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-child fa-2x mb-2" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold mb-0">Child Welfare</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-venus fa-2x mb-2" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold mb-0">Women's Rights</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm hover-lift">
+                    <div class="card-body text-center p-3">
+                        <i class="fas fa-seedling fa-2x mb-2" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold mb-0">Agriculture</h6>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-5">
+<section class="py-5 text-white" style="background-color: #2BB6E0;">
     <div class="container text-center">
-        <h2 class="fw-bold mb-3">Have a Project in Mind?</h2>
-        <p class="lead text-muted mb-4">
-            Let's collaborate and create something amazing together
+        <h2 class="fw-bold mb-3">Ready to Write Your Success Story?</h2>
+        <p class="lead mb-4">
+            Let's work together to amplify your organization's impact through technology
         </p>
-        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Start Your Project</a>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'contact' %}" class="btn btn-light btn-lg shadow" style="color: #2BB6E0;">
+                <i class="fas fa-comments me-2"></i>Start a Conversation
+            </a>
+            <a href="{% url 'services' %}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-list me-2"></i>Explore Our Services
+            </a>
+        </div>
     </div>
 </section>
 {% endblock %}

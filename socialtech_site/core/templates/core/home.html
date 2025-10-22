@@ -1,82 +1,263 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Home - SocialTech{% endblock %}
+{% block title %}Home - SocialTech Innovations{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-        <div class="row align-items-center min-vh-75">
-            <div class="col-lg-6">
-                <h1 class="display-3 fw-bold mb-4">
-                    Welcome to <span style="color: #2BB6E0;">SocialTech</span>
+<section class="hero-section position-relative text-white d-flex align-items-center" 
+         style="background: url({% static "core/images/hero-bg.jpg" %}) center/cover no-repeat; min-height: 90vh;">
+
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" 
+         style="background: rgba(0, 0, 0, 0.55); z-index: 1;"></div>
+    
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-start">
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                    Technology Solutions for <span style="color: #2BB6E0;">Social Impact</span>
                 </h1>
-                <p class="lead mb-4">
-                    We create cutting-edge digital solutions that transform businesses 
-                    and connect communities. Let's build something amazing together.
+                <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    Empowering schools, churches, NGOs, and social enterprises with affordable, 
+                    innovative technology solutions to amplify their impact and transform communities.
                 </p>
-                <div class="d-flex gap-3 flex-wrap">
-                    <a href="{% url 'services' %}" class="btn btn-primary btn-lg">
-                        Our Services
+                <div class="d-flex gap-3 flex-wrap animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="{% url 'services' %}" class="btn btn-primary btn-lg shadow">
+                        <i class="fas fa-rocket me-2"></i>Explore Solutions
                     </a>
-                    <a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg">
-                        Get in Touch
+                    <a href="{% url 'join' %}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-hands-helping me-2"></i>Partner With Us
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                <i class="fas fa-laptop-code fa-10x text-primary opacity-75"></i>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Features Section -->
+<!-- Mission Statement -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="fw-bold mb-4">Bridging the Digital Divide for Social Good</h2>
+                <p class="lead text-muted">
+                    At SocialTech Innovations, we believe technology should be accessible to every organization 
+                    working to make the world a better place. We provide nonprofits and social enterprises 
+                    with the tools, resources, and expertise they need to maximize their impact.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="py-5 bg-light" id="offer">
+  <div class="container text-center">
+    <h2 class="mb-4 fw-bold">What We Offer</h2>
+    <p class="mb-5 text-muted">At SocialTech Innovations, we deliver tailored technology solutions to empower businesses and communities.</p>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/affordable-tech.jpg" %}') center/cover no-repeat;">
+            <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
+              <i class="fas fa-laptop-house fa-2x text-white"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Affordable Technology Access</h5>
+            <p class="card-text text-muted">We provide affordable access to tech devices and solutions for startups, schools, and small businesses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/custom-dev.jpg" %}') center/cover no-repeat;">
+            <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
+              <i class="fas fa-code fa-2x text-white"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Custom Development</h5>
+            <p class="card-text text-muted">We build web and mobile solutions tailored to your business needs using the latest technologies.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/training-support.jpg" %}') center/cover no-repeat;">
+            <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
+              <i class="fas fa-chalkboard-teacher fa-2x text-white"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Training & Support</h5>
+            <p class="card-text text-muted">We empower individuals and organizations with the digital skills and technical support they need to grow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section (List View) -->
+<section class="projects py-5" >
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Our Impactful Projects</h2>
+    <p class="text-center text-muted mb-5">
+      At SocialTech Innovations, we create technology-driven solutions that uplift communities and drive progress.
+    </p>
+
+    <!-- Project 1 -->
+    <div class="row align-items-center mb-5 project-item">
+      <div class="col-md-6">
+        <div class="project-img-wrapper">
+          <img src="{% static 'core/images/project1.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Digital Literacy Training">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-semibold mt-3 mt-md-0">Digital Literacy Training</h4>
+        <p class="text-muted">
+          We provide tailored digital literacy workshops to empower youth and adults with essential computer and internet skills. 
+          These programs enhance employability, innovation, and inclusion in the digital economy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
+      <div class="col-md-6">
+        <div class="project-img-wrapper">
+          <img src="{% static 'core/images/project2.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Tech for Farmers">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-semibold mt-3 mt-md-0">Tech for Farmers</h4>
+        <p class="text-muted">
+          Through smart agricultural tools and digital platforms, we help local farmers optimize crop yields, 
+          reduce waste, and access valuable market insights for sustainable livelihoods.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="row align-items-center mb-5 project-item">
+      <div class="col-md-6">
+        <div class="project-img-wrapper">
+          <img src="{% static 'core/images/project3.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Social Impact Apps">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="fw-semibold mt-3 mt-md-0">Social Impact Apps</h4>
+        <p class="text-muted">
+          Our team builds mobile and web applications designed to address social challenges — 
+          from healthcare access to education and civic engagement — using user-friendly and scalable technologies.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'projects' %}" class="btn btn-primary px-4 py-2 rounded-pill">
+            Show More <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Serve -->
 <section class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Why Choose Us</h2>
-            <p class="text-muted">We deliver excellence in every project</p>
+            <h2 class="fw-bold">Who We Serve</h2>
+            <p class="text-muted">Supporting organizations that are changing the world</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
-                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold">Fast Delivery</h5>
-                        <p class="text-muted">Quick turnaround times without compromising quality</p>
+                        <i class="fas fa-project-diagram fa-3x mb-3" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold">Projects Completed</h6>
+                        <p class="text-muted small mb-0">Delivering impactful technology projects that drive real change.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
-                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold">Expert Team</h5>
-                        <p class="text-muted">Skilled professionals dedicated to your success</p>
+                        <i class="fas fa-users fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold">Communities Served</h6>
+                        <p class="text-muted small mb-0">Empowering diverse communities through digital innovation.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
-                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold">Reliable Support</h5>
-                        <p class="text-muted">24/7 support to keep your business running smoothly</p>
+                        <i class="fas fa-handshake fa-3x mb-3" style="color: #2BB6E0;"></i>
+                        <h6 class="fw-bold">Active Clients</h6>
+                        <p class="text-muted small mb-0">Partnering with organizations actively transforming lives.</p>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-chalkboard-teacher fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold">volunteers Trained</h6>
+                        <p class="text-muted small mb-0">Equipping volunteers with tech skills to amplify social impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stats -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-building fa-3x mb-3" style="color: #2BB6E0;"></i>
+                <h2 class="fw-bold">500+</h2>
+                <p class="text-muted">Organizations Served</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-globe fa-3x mb-3" style="color: #8B4FBF;"></i>
+                <h2 class="fw-bold">25</h2>
+                <p class="text-muted">Countries Reached</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-dollar-sign fa-3x mb-3" style="color: #2BB6E0;"></i>
+                <h2 class="fw-bold">$5M+</h2>
+                <p class="text-muted">Technology Value Delivered</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-heart fa-3x mb-3" style="color: #8B4FBF;"></i>
+                <h2 class="fw-bold">10,000+</h2>
+                <p class="text-muted">Lives Impacted</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-5 bg-primary text-white">
+<section class="py-5 text-white" style="background-color: #2BB6E0;">
     <div class="container text-center">
-        <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
-        <p class="lead mb-4">Let's discuss how we can help bring your ideas to life</p>
-        <a href="{% url 'join' %}" class="btn btn-light btn-lg">Join Our Team</a>
+        <h2 class="fw-bold mb-3">Ready to Transform Your Organization?</h2>
+        <p class="lead mb-4">Join hundreds of social impact organizations using technology to amplify their mission</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'contact' %}" class="btn btn-light btn-lg" style="color: #2BB6E0;">
+                <i class="fas fa-envelope me-2"></i>Get Started Today
+            </a>
+            <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-info-circle me-2"></i>Learn More
+            </a>
+        </div>
     </div>
 </section>
 {% endblock %}

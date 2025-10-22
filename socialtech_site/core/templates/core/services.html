@@ -1,70 +1,96 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Services - SocialTech{% endblock %}
+{% block title %}Services - SocialTech Innovations{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section bg-primary text-white">
+<section class="hero-section text-white" style="background-color: #2BB6E0;">
     <div class="container">
         <div class="row align-items-center py-5">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-3">Our Services</h1>
-                <p class="lead">Comprehensive solutions tailored to your needs</p>
+                <h1 class="display-4 fw-bold mb-3">Technology Solutions for Social Impact</h1>
+                <p class="lead">Affordable, innovative IT services designed specifically for nonprofits and social enterprises</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Services Section -->
+<!-- Core Services -->
 <section class="py-5">
     <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Services</h2>
+            <p class="text-muted">Comprehensive technology solutions tailored to your mission</p>
+        </div>
         <div class="row g-4">
-            <!-- Web Development -->
+            <!-- Managed IT Services -->
             <div class="col-lg-6">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
-                                <i class="fas fa-globe fa-2x"></i>
+                            <div class="text-white rounded p-3 me-3" style="background-color: #2BB6E0;">
+                                <i class="fas fa-server fa-2x"></i>
                             </div>
-                            <h3 class="fw-bold mb-0">Web Development</h3>
+                            <h3 class="fw-bold mb-0">Managed IT Services</h3>
                         </div>
                         <p class="text-muted mb-3">
-                            Custom websites and web applications built with modern technologies. 
-                            From simple landing pages to complex enterprise solutions, we deliver 
-                            responsive, scalable, and secure web platforms.
+                            Comprehensive IT management for nonprofits with limited budgets and resources. 
+                            We handle your entire technology infrastructure so you can focus on your mission.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Responsive Design</li>
-                            <li><i class="fas fa-check text-success me-2"></i>E-commerce Solutions</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Content Management Systems</li>
-                            <li><i class="fas fa-check text-success me-2"></i>API Integration</li>
+                            <li><i class="fas fa-check text-success me-2"></i>24/7 Remote & On-site Support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Proactive Network Monitoring</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Hardware & Software Management</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Fixed Monthly Pricing</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile App Development -->
+            <!-- Technology Donations & Discounts -->
             <div class="col-lg-6">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
-                                <i class="fas fa-mobile-alt fa-2x"></i>
+                            <div class="text-white rounded p-3 me-3" style="background-color: #8B4FBF;">
+                                <i class="fas fa-gift fa-2x"></i>
                             </div>
-                            <h3 class="fw-bold mb-0">Mobile App Development</h3>
+                            <h3 class="fw-bold mb-0">Technology Donations Program</h3>
                         </div>
                         <p class="text-muted mb-3">
-                            Native and cross-platform mobile applications for iOS and Android. 
-                            We create user-friendly apps that engage your audience and drive 
-                            business growth.
+                            Access donated and heavily discounted software, hardware, and cloud services 
+                            from major technology providers through our nonprofit partnerships.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>iOS & Android Apps</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Cross-Platform Development</li>
-                            <li><i class="fas fa-check text-success me-2"></i>App Store Optimization</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Maintenance & Updates</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Microsoft Office 365 (Discounted)</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Adobe Creative Cloud (Nonprofit Pricing)</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cloud Storage Solutions</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Refurbished Hardware</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Solutions -->
+            <div class="col-lg-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-white rounded p-3 me-3" style="background-color: #2BB6E0;">
+                                <i class="fas fa-shield-alt fa-2x"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0">Cybersecurity & Compliance</h3>
+                        </div>
+                        <p class="text-muted mb-3">
+                            Protect your organization's sensitive donor and beneficiary data with affordable 
+                            security solutions tailored to nonprofit risk profiles and compliance requirements.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Security Assessments & Audits</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Data Encryption & Backup</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Staff Security Training</li>
+                            <li><i class="fas fa-check text-success me-2"></i>GDPR & PCI Compliance Support</li>
                         </ul>
                     </div>
                 </div>
@@ -75,94 +101,68 @@
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
+                            <div class="text-white rounded p-3 me-3" style="background-color: #8B4FBF;">
                                 <i class="fas fa-cloud fa-2x"></i>
                             </div>
-                            <h3 class="fw-bold mb-0">Cloud Solutions</h3>
+                            <h3 class="fw-bold mb-0">Cloud Migration & Hosting</h3>
                         </div>
                         <p class="text-muted mb-3">
-                            Leverage the power of cloud computing to scale your business. 
-                            We provide cloud migration, architecture design, and ongoing 
-                            management services.
+                            Move your organization to the cloud for improved collaboration, reduced costs, 
+                            and enhanced accessibility for remote teams and field staff.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Cloud Migration</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Infrastructure Management</li>
-                            <li><i class="fas fa-check text-success me-2"></i>DevOps Implementation</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Security & Compliance</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cloud Strategy & Planning</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Microsoft 365 Migration</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Google Workspace Setup</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cloud Backup Solutions</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- UI/UX Design -->
+            <!-- Custom Development -->
             <div class="col-lg-6">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
-                                <i class="fas fa-paint-brush fa-2x"></i>
+                            <div class="text-white rounded p-3 me-3" style="background-color: #2BB6E0;">
+                                <i class="fas fa-code fa-2x"></i>
                             </div>
-                            <h3 class="fw-bold mb-0">UI/UX Design</h3>
+                            <h3 class="fw-bold mb-0">Custom Software Development</h3>
                         </div>
                         <p class="text-muted mb-3">
-                            Beautiful, intuitive designs that provide exceptional user experiences. 
-                            We combine aesthetics with functionality to create interfaces that 
-                            users love.
+                            Pro-bono and affordable custom applications built specifically for your 
+                            organization's unique workflows, donor management, and program delivery needs.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>User Research</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Wireframing & Prototyping</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Visual Design</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Usability Testing</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Donor Management Systems</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Volunteer Coordination Platforms</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Program Tracking Tools</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Mobile Apps for Field Work</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Digital Marketing -->
+            <!-- Training & Capacity Building -->
             <div class="col-lg-6">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
-                                <i class="fas fa-bullhorn fa-2x"></i>
+                            <div class="text-white rounded p-3 me-3" style="background-color: #8B4FBF;">
+                                <i class="fas fa-chalkboard-teacher fa-2x"></i>
                             </div>
-                            <h3 class="fw-bold mb-0">Digital Marketing</h3>
+                            <h3 class="fw-bold mb-0">Training & Capacity Building</h3>
                         </div>
                         <p class="text-muted mb-3">
-                            Grow your online presence with data-driven marketing strategies. 
-                            We help you reach your target audience and achieve your business goals.
+                            Comprehensive training programs to build internal tech capacity and ensure 
+                            your staff can effectively use technology tools to advance your mission.
                         </p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>SEO Optimization</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Social Media Marketing</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Content Strategy</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Analytics & Reporting</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IT Consulting -->
-            <div class="col-lg-6">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded p-3 me-3">
-                                <i class="fas fa-user-tie fa-2x"></i>
-                            </div>
-                            <h3 class="fw-bold mb-0">IT Consulting</h3>
-                        </div>
-                        <p class="text-muted mb-3">
-                            Expert guidance to help you make informed technology decisions. 
-                            We assess your needs and provide strategic recommendations for growth.
-                        </p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>Technology Strategy</li>
-                            <li><i class="fas fa-check text-success me-2"></i>System Architecture</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Process Optimization</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Training & Support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Software Training Workshops</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cybersecurity Awareness</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Digital Transformation Consulting</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Online Learning Resources</li>
                         </ul>
                     </div>
                 </div>
@@ -171,14 +171,132 @@
     </div>
 </section>
 
-<!-- CTA Section -->
+<!-- Additional Services -->
 <section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h3 class="fw-bold">Additional Solutions</h3>
+            <p class="text-muted">More ways we support your organization</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-database fa-3x mb-3" style="color: #2BB6E0;"></i>
+                        <h5 class="fw-bold">Database Management</h5>
+                        <p class="text-muted mb-0">Donor databases, CRM systems, and data analytics solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-mobile-alt fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h5 class="fw-bold">Mobile Solutions</h5>
+                        <p class="text-muted mb-0">Apps for program delivery, data collection, and beneficiary tracking</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-globe fa-3x mb-3" style="color: #2BB6E0;"></i>
+                        <h5 class="fw-bold">Website Development</h5>
+                        <p class="text-muted mb-0">Professional websites for online fundraising and awareness</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-video fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h5 class="fw-bold">Video Conferencing</h5>
+                        <p class="text-muted mb-0">Setup and support for Zoom, Teams, and virtual collaboration tools</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-envelope fa-3x mb-3" style="color: #2BB6E0;"></i>
+                        <h5 class="fw-bold">Email Marketing</h5>
+                        <p class="text-muted mb-0">Newsletter platforms and donor communication tools</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <i class="fas fa-chart-line fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h5 class="fw-bold">Data Analytics</h5>
+                        <p class="text-muted mb-0">Impact measurement and reporting dashboards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Philosophy -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Our Pricing Philosophy</h2>
+                <p class="lead mb-3">Technology should never be a barrier to social impact.</p>
+                <p class="mb-3">
+                    We offer <strong>nonprofit-specific pricing</strong> that reflects the unique budget 
+                    constraints of social impact organizations. Our flexible payment options include:
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: #2BB6E0;"></i>
+                        <strong>Pro-bono services</strong> for eligible organizations</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: #2BB6E0;"></i>
+                        <strong>Sliding scale fees</strong> based on organization size</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: #2BB6E0;"></i>
+                        <strong>Grant-funded projects</strong> with flexible terms</li>
+                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: #2BB6E0;"></i>
+                        <strong>Payment plans</strong> that work with grant cycles</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm" style="background-color: #F8F9FA;">
+                    <div class="card-body p-5">
+                        <h4 class="fw-bold mb-4">Eligibility Requirements</h4>
+                        <p class="mb-3">To access our nonprofit pricing, your organization must be:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: #8B4FBF;"></i>
+                                Registered 501(c)(3) or equivalent nonprofit status</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: #8B4FBF;"></i>
+                                Operating with a clear social mission</li>
+                            <li class="mb-2"><i class="fas fa-check me-2" style="color: #8B4FBF;"></i>
+                                Committed to transparency and accountability</li>
+                        </ul>
+                        <a href="{% url 'contact' %}" class="btn btn-primary mt-3">
+                            <i class="fas fa-clipboard-check me-2"></i>Check Eligibility
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 text-white" style="background-color: #2BB6E0;">
     <div class="container text-center">
-        <h2 class="fw-bold mb-3">Ready to Get Started?</h2>
-        <p class="lead text-muted mb-4">
-            Let's discuss how our services can help transform your business
+        <h2 class="fw-bold mb-3">Ready to Amplify Your Impact?</h2>
+        <p class="lead mb-4">
+            Let's discuss how our technology solutions can help your organization achieve its mission
         </p>
-        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Us Today</a>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'contact' %}" class="btn btn-light btn-lg" style="color: #2BB6E0;">
+                <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
+            </a>
+            <a href="{% url 'projects' %}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-eye me-2"></i>View Success Stories
+            </a>
+        </div>
     </div>
 </section>
 {% endblock %}
