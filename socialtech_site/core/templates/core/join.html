@@ -4,50 +4,67 @@
 {% block title %}Join Us - SocialTech{% endblock %}
 
 {% block content %}
+
 <!-- Hero Section -->
-<section class="hero-section bg-primary text-white">
-    <div class="container">
-        <div class="row align-items-center py-5">
+<section class="hero-section position-relative text-white d-flex align-items-center" 
+         style="background: url({% static 'core/images/join-hero.jpg' %}) center/cover no-repeat; min-height: 70vh;">
+    
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" 
+         style="background: rgba(43, 182, 224, 0.85); opacity: 50%; : 1;"></div>
+    
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-3">Join Our Team</h1>
-                <p class="lead">Be part of something amazing. Build the future with us.</p>
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                    Join Our Team
+                </h1>
+                <p class="lead mb-0 animate__animated animate__fadeInUp animate__delay-1s">
+                    Be part of something amazing. Build the future with us.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Why Join Us Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Why Work With Us?</h2>
-            <p class="text-muted">Great reasons to join the SocialTech family</p>
-        </div>
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold mb-3">Innovation Culture</h5>
-                        <p class="text-muted">Work on cutting-edge projects and explore new technologies.</p>
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Why Join SocialTech?</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card shadow-sm hover-lift h-100">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Work with Visionaries</h5>
+                        <p class="text-muted">Collaborate with forward-thinking individuals who believe in innovation and impact.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold mb-3">Career Growth</h5>
-                        <p class="text-muted">Continuous learning opportunities and clear career progression paths.</p>
+            <div class="col-md-3">
+                <div class="card shadow-sm hover-lift h-100">
+                    <div class="card-body">
+                        <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Build Real Solutions</h5>
+                        <p class="text-muted">Turn ideas into reality by working on exciting tech projects with real-world influence.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center p-4">
-                        <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold mb-3">Work-Life Balance</h5>
-                        <p class="text-muted">Flexible working hours and remote work options available.</p>
+            <div class="col-md-3">
+                <div class="card shadow-sm hover-lift h-100">
+                    <div class="card-body">
+                        <i class="fas fa-graduation-cap fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Grow Your Skills</h5>
+                        <p class="text-muted">Get mentorship, training, and a hands-on experience that sharpens your professional edge.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm hover-lift h-100">
+                    <div class="card-body">
+                        <i class="fas fa-hand-holding-usd fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Earn and Learn</h5>
+                        <p class="text-muted">We ensure fairness and value for your time as we grow together sustainably.</p>
                     </div>
                 </div>
             </div>

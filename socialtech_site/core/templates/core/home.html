@@ -3,22 +3,24 @@
 
 {% block title %}Home - SocialTech Innovations{% endblock %}
 
+{% block meta_description %}SocialTech Innovations - Empowering communities through digital literacy, innovation bootcamps, and tech for development in Ghana and across Africa.{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section position-relative text-white d-flex align-items-center" 
-         style="background: url({% static "core/images/hero-bg.jpg" %}) center/cover no-repeat; min-height: 90vh;">
+         style="background: url({% static 'core/images/hero-bg.jpg' %}) center/cover no-repeat; min-height: 90vh;">
 
-    <!-- Overlay -->
+    <!-- Gradient Overlay (FIXED) -->
     <div class="position-absolute top-0 start-0 w-100 h-100" 
-         style="background: rgba(0, 0, 0, 0.55); z-index: 1;"></div>
+         style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(43, 182, 224, 0.45)); z-index: 1;"></div>
     
-    <div class="container position-relative z-2">
+    <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center">
             <div class="col-lg-7 text-start">
-                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
-                    Technology Solutions for <span style="color: #2BB6E0;">Social Impact</span>
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown" style="text-shadow: 2px 4px 8px rgba(0,0,0,0.4);">
+                    Technology for <span style="color: #2BB6E0;">Community Development</span>
                 </h1>
-                <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.3); font-size: 1.3rem;">
                     Empowering schools, churches, NGOs, and social enterprises with affordable, 
                     innovative technology solutions to amplify their impact and transform communities.
                 </p>
@@ -27,7 +29,7 @@
                         <i class="fas fa-rocket me-2"></i>Explore Solutions
                     </a>
                     <a href="{% url 'join' %}" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-hands-helping me-2"></i>Partner With Us
+                        <i class="fas fa-hands-helping me-2"></i>Get Involved
                     </a>
                 </div>
             </div>
@@ -40,11 +42,11 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h2 class="fw-bold mb-4">Bridging the Digital Divide for Social Good</h2>
+                <h2 class="fw-bold mb-4">Building a Digital Future Together</h2>
                 <p class="lead text-muted">
-                    At SocialTech Innovations, we believe technology should be accessible to every organization 
-                    working to make the world a better place. We provide nonprofits and social enterprises 
-                    with the tools, resources, and expertise they need to maximize their impact.
+                    At SocialTech Innovations, we believe technology is a tool for empowerment and transformation. 
+                    We're a community-driven organization bridging the gap between technology and society, 
+                    empowering individuals and organizations across Ghana and Africa to leverage digital tools for positive change.
                 </p>
             </div>
         </div>
@@ -55,20 +57,20 @@
 <section class="py-5 bg-light" id="offer">
   <div class="container text-center">
     <h2 class="mb-4 fw-bold">What We Offer</h2>
-    <p class="mb-5 text-muted">At SocialTech Innovations, we deliver tailored technology solutions to empower businesses and communities.</p>
+    <p class="mb-5 text-muted">Comprehensive programs designed to empower communities through technology and innovation.</p>
 
     <div class="row g-4">
       <!-- Card 1 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm border-0">
-          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/affordable-tech.jpg" %}') center/cover no-repeat;">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/affordable-tech.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
-              <i class="fas fa-laptop-house fa-2x text-white"></i>
+              <i class="fas fa-laptop-code fa-2x text-white"></i>
             </div>
           </div>
           <div class="card-body">
-            <h5 class="card-title fw-bold">Affordable Technology Access</h5>
-            <p class="card-text text-muted">We provide affordable access to tech devices and solutions for startups, schools, and small businesses.</p>
+            <h5 class="card-title fw-bold">Digital Literacy Training</h5>
+            <p class="card-text text-muted">We equip youth and community members with foundational digital skills through bootcamps, workshops, and hands-on training programs.</p>
           </div>
         </div>
       </div>
@@ -76,14 +78,14 @@
       <!-- Card 2 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm border-0">
-          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/custom-dev.jpg" %}') center/cover no-repeat;">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/custom-dev.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
-              <i class="fas fa-code fa-2x text-white"></i>
+              <i class="fas fa-lightbulb fa-2x text-white"></i>
             </div>
           </div>
           <div class="card-body">
-            <h5 class="card-title fw-bold">Custom Development</h5>
-            <p class="card-text text-muted">We build web and mobile solutions tailored to your business needs using the latest technologies.</p>
+            <h5 class="card-title fw-bold">Innovation & Development</h5>
+            <p class="card-text text-muted">We build tech solutions for health, agriculture, education, and sustainability while supporting local innovators through mentorship and incubation.</p>
           </div>
         </div>
       </div>
@@ -91,14 +93,14 @@
       <!-- Card 3 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm border-0">
-          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static "core/images/training-support.jpg" %}') center/cover no-repeat;">
+          <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/training-support.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
-              <i class="fas fa-chalkboard-teacher fa-2x text-white"></i>
+              <i class="fas fa-users fa-2x text-white"></i>
             </div>
           </div>
           <div class="card-body">
-            <h5 class="card-title fw-bold">Training & Support</h5>
-            <p class="card-text text-muted">We empower individuals and organizations with the digital skills and technical support they need to grow.</p>
+            <h5 class="card-title fw-bold">Community Empowerment</h5>
+            <p class="card-text text-muted">We organize bootcamps, innovation challenges, and collaborative projects that enable communities to solve local problems with technology.</p>
           </div>
         </div>
       </div>
@@ -106,27 +108,31 @@
   </div>
 </section>
 
-<!-- Featured Projects Section (List View) -->
-<section class="projects py-5" >
+<!-- Featured Projects Section -->
+<section class="projects py-5">
   <div class="container">
-    <h2 class="fw-bold text-center mb-4">Our Impactful Projects</h2>
+    <h2 class="fw-bold text-center mb-4">Our Impact Stories</h2>
     <p class="text-center text-muted mb-5">
-      At SocialTech Innovations, we create technology-driven solutions that uplift communities and drive progress.
+      Real projects creating meaningful change in communities across Ghana.
     </p>
 
     <!-- Project 1 -->
     <div class="row align-items-center mb-5 project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project1.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Digital Literacy Training">
+          <img src="{% static 'core/images/project1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Digital Literacy Training" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
-        <h4 class="fw-semibold mt-3 mt-md-0">Digital Literacy Training</h4>
+        <h4 class="fw-semibold mt-3 mt-md-0">Digital Literacy Bootcamps</h4>
         <p class="text-muted">
-          We provide tailored digital literacy workshops to empower youth and adults with essential computer and internet skills. 
-          These programs enhance employability, innovation, and inclusion in the digital economy.
+          We provide intensive digital literacy workshops empowering youth and adults with essential computer and internet skills. 
+          These programs enhance employability, foster innovation, and drive inclusion in Ghana's digital economy.
         </p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <span class="badge bg-light text-dark"><i class="fas fa-users me-1"></i> 500+ Trained</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 10 Communities</span>
+        </div>
       </div>
     </div>
 
@@ -134,15 +140,19 @@
     <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project2.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Tech for Farmers">
+          <img src="{% static 'core/images/project2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Tech for Farmers" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
-        <h4 class="fw-semibold mt-3 mt-md-0">Tech for Farmers</h4>
+        <h4 class="fw-semibold mt-3 mt-md-0">AgriTech Innovation</h4>
         <p class="text-muted">
           Through smart agricultural tools and digital platforms, we help local farmers optimize crop yields, 
-          reduce waste, and access valuable market insights for sustainable livelihoods.
+          reduce waste, and access valuable market insights for sustainable livelihoods and food security.
         </p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <span class="badge bg-light text-dark"><i class="fas fa-seedling me-1"></i> 200+ Farmers</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-chart-line me-1"></i> 30% Yield Increase</span>
+        </div>
       </div>
     </div>
 
@@ -150,20 +160,25 @@
     <div class="row align-items-center mb-5 project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project3.jpg' %}" class="img-fluid rounded shadow-sm project-img" alt="Social Impact Apps">
+          <img src="{% static 'core/images/project3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Community Innovation Projects" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
-        <h4 class="fw-semibold mt-3 mt-md-0">Social Impact Apps</h4>
+        <h4 class="fw-semibold mt-3 mt-md-0">Community Innovation Challenges</h4>
         <p class="text-muted">
-          Our team builds mobile and web applications designed to address social challenges — 
-          from healthcare access to education and civic engagement — using user-friendly and scalable technologies.
+          We organize hackathons and innovation challenges where young developers, designers, and entrepreneurs 
+          collaborate to build solutions addressing real social challenges in healthcare, education, and civic engagement.
         </p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <span class="badge bg-light text-dark"><i class="fas fa-trophy me-1"></i> 15 Challenges</span>
+          <span class="badge bg-light text-dark"><i class="fas fa-code me-1"></i> 50+ Solutions</span>
+        </div>
       </div>
     </div>
+
     <div class="text-center mt-4">
         <a href="{% url 'projects' %}" class="btn btn-primary px-4 py-2 rounded-pill">
-            Show More <i class="fas fa-arrow-right ms-2"></i>
+            View All Projects <i class="fas fa-arrow-right ms-2"></i>
         </a>
     </div>
   </div>
@@ -173,16 +188,16 @@
 <section class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Who We Serve</h2>
-            <p class="text-muted">Supporting organizations that are changing the world</p>
+            <h2 class="fw-bold">Our Impact Areas</h2>
+            <p class="text-muted">Creating positive change across multiple sectors</p>
         </div>
         <div class="row g-4">
             <div class="col-md-3 col-sm-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-project-diagram fa-3x mb-3" style="color: #2BB6E0;"></i>
-                        <h6 class="fw-bold">Projects Completed</h6>
-                        <p class="text-muted small mb-0">Delivering impactful technology projects that drive real change.</p>
+                        <h6 class="fw-bold">Projects Delivered</h6>
+                        <p class="text-muted small mb-0">Impactful technology solutions that drive real community change.</p>
                     </div>
                 </div>
             </div>
@@ -199,16 +214,16 @@
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-handshake fa-3x mb-3" style="color: #2BB6E0;"></i>
-                        <h6 class="fw-bold">Active Clients</h6>
-                        <p class="text-muted small mb-0">Partnering with organizations actively transforming lives.</p>
+                        <h6 class="fw-bold">Active Partners</h6>
+                        <p class="text-muted small mb-0">Collaborating with organizations to amplify social impact.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
-                        <i class="fas fa-chalkboard-teacher fa-3x mb-3" style="color: #8B4FBF;"></i>
-                        <h6 class="fw-bold">volunteers Trained</h6>
+                        <i class="fas fa-graduation-cap fa-3x mb-3" style="color: #8B4FBF;"></i>
+                        <h6 class="fw-bold">Volunteers Trained</h6>
                         <p class="text-muted small mb-0">Equipping volunteers with tech skills to amplify social impact.</p>
                     </div>
                 </div>
@@ -220,25 +235,29 @@
 <!-- Impact Stats -->
 <section class="py-5">
     <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Our Impact in Numbers</h2>
+            <p class="text-muted">Measuring change across Ghana and Africa</p>
+        </div>
         <div class="row text-center">
             <div class="col-md-3 mb-4">
-                <i class="fas fa-building fa-3x mb-3" style="color: #2BB6E0;"></i>
-                <h2 class="fw-bold">500+</h2>
-                <p class="text-muted">Organizations Served</p>
+                <i class="fas fa-users fa-3x mb-3" style="color: #2BB6E0;"></i>
+                <h2 class="fw-bold counter" data-target="2500">0</h2>
+                <p class="text-muted">Youth Trained</p>
             </div>
             <div class="col-md-3 mb-4">
-                <i class="fas fa-globe fa-3x mb-3" style="color: #8B4FBF;"></i>
-                <h2 class="fw-bold">25</h2>
-                <p class="text-muted">Countries Reached</p>
+                <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #8B4FBF;"></i>
+                <h2 class="fw-bold counter" data-target="15">0</h2>
+                <p class="text-muted">Communities Reached</p>
             </div>
             <div class="col-md-3 mb-4">
-                <i class="fas fa-dollar-sign fa-3x mb-3" style="color: #2BB6E0;"></i>
-                <h2 class="fw-bold">$5M+</h2>
-                <p class="text-muted">Technology Value Delivered</p>
+                <i class="fas fa-laptop-code fa-3x mb-3" style="color: #2BB6E0;"></i>
+                <h2 class="fw-bold counter" data-target="50">0</h2>
+                <p class="text-muted">Projects Launched</p>
             </div>
             <div class="col-md-3 mb-4">
                 <i class="fas fa-heart fa-3x mb-3" style="color: #8B4FBF;"></i>
-                <h2 class="fw-bold">10,000+</h2>
+                <h2 class="fw-bold">10K+</h2>
                 <p class="text-muted">Lives Impacted</p>
             </div>
         </div>
@@ -246,10 +265,10 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-5 text-white" style="background-color: #2BB6E0;">
+<section class="py-5 text-white" style="background: linear-gradient(135deg, #2BB6E0 0%, #8B4FBF 100%);">
     <div class="container text-center">
-        <h2 class="fw-bold mb-3">Ready to Transform Your Organization?</h2>
-        <p class="lead mb-4">Join hundreds of social impact organizations using technology to amplify their mission</p>
+        <h2 class="fw-bold mb-3">Ready to Make an Impact?</h2>
+        <p class="lead mb-4">Join our community of innovators, learners, and change-makers using technology to build a better Ghana.</p>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
             <a href="{% url 'contact' %}" class="btn btn-light btn-lg" style="color: #2BB6E0;">
                 <i class="fas fa-envelope me-2"></i>Get Started Today
