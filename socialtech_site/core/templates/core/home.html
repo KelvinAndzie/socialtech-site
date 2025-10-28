@@ -7,7 +7,7 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section position-relative text-white d-flex align-items-center" 
+<section class="hero-section position-relative text-white d-flex align-items-center" data-aos="fade-in"
          style="background: url({% static 'core/images/hero-bg.jpg' %}) center/cover no-repeat; min-height: 90vh;">
 
     <!-- Gradient Overlay (FIXED) -->
@@ -38,7 +38,7 @@
 </section>
 
 <!-- Mission Statement -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -54,14 +54,14 @@
 </section>
 
 <!-- What We Offer Section -->
-<section class="py-5 bg-light" id="offer">
+<section class="py-5 bg-light" id="offer" data-aos="fade-in">
   <div class="container text-center">
     <h2 class="mb-4 fw-bold">What We Offer</h2>
     <p class="mb-5 text-muted">Comprehensive programs designed to empower communities through technology and innovation.</p>
 
     <div class="row g-4">
       <!-- Card 1 -->
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/affordable-tech.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
@@ -76,7 +76,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/custom-dev.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
@@ -91,7 +91,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-img-top position-relative" style="height: 200px; background: url('{% static 'core/images/training-support.jpg' %}') center/cover no-repeat;">
             <div class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-50 p-3 rounded-circle">
@@ -109,7 +109,7 @@
 </section>
 
 <!-- Featured Projects Section -->
-<section class="projects py-5">
+<section class="projects py-5" data-aos="fade-in">
   <div class="container">
     <h2 class="fw-bold text-center mb-4">Our Impact Stories</h2>
     <p class="text-center text-muted mb-5">
@@ -120,7 +120,7 @@
     <div class="row align-items-center mb-5 project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project1.jpg' %}" class="img-fluid rounded shadow-sm" alt="Digital Literacy Training" loading="lazy">
+          <img src="{% static 'core/images/project1.jpg' %}" class="img-fluid rounded shadow-sm" data-aos="zoom-in" alt="Digital Literacy Training" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
@@ -140,7 +140,7 @@
     <div class="row align-items-center mb-5 flex-md-row-reverse project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project2.jpg' %}" class="img-fluid rounded shadow-sm" alt="Tech for Farmers" loading="lazy">
+          <img src="{% static 'core/images/project2.jpg' %}" class="img-fluid rounded shadow-sm" data-aos="zoom-in" alt="Tech for Farmers" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
@@ -160,7 +160,7 @@
     <div class="row align-items-center mb-5 project-item">
       <div class="col-md-6">
         <div class="project-img-wrapper">
-          <img src="{% static 'core/images/project3.jpg' %}" class="img-fluid rounded shadow-sm" alt="Community Innovation Projects" loading="lazy">
+          <img src="{% static 'core/images/project3.jpg' %}" class="img-fluid rounded shadow-sm" data-aos="zoom-in" alt="Community Innovation Projects" loading="lazy">
         </div>
       </div>
       <div class="col-md-6">
@@ -185,15 +185,15 @@
 </section>
 
 <!-- Who We Serve -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Our Impact Areas</h2>
             <p class="text-muted">Creating positive change across multiple sectors</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
-                <div class="card border-0 shadow-sm h-100">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card border-0 shadow-sm h-100" >
                     <div class="card-body text-center p-4">
                         <i class="fas fa-project-diagram fa-3x mb-3" style="color: #2BB6E0;"></i>
                         <h6 class="fw-bold">Projects Delivered</h6>
@@ -201,7 +201,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-users fa-3x mb-3" style="color: #8B4FBF;"></i>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-handshake fa-3x mb-3" style="color: #2BB6E0;"></i>
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-graduation-cap fa-3x mb-3" style="color: #8B4FBF;"></i>
@@ -233,7 +233,7 @@
 </section>
 
 <!-- Impact Stats -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-4">
             <h2 class="fw-bold">Our Impact in Numbers</h2>
@@ -265,8 +265,8 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg, #2BB6E0 0%, #8B4FBF 100%);">
-    <div class="container text-center">
+<section class="cta-section text-black text-center">
+    <div class="container">
         <h2 class="fw-bold mb-3">Ready to Make an Impact?</h2>
         <p class="lead mb-4">Join our community of innovators, learners, and change-makers using technology to build a better Ghana.</p>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -279,4 +279,8 @@
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'core/js/home.js' %}"></script>
 {% endblock %}

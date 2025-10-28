@@ -6,7 +6,7 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero-section position-relative text-white d-flex align-items-center" 
+<section class="hero-section position-relative text-white d-flex align-items-center" data-aos="fade-in"
          style="background: url({% static 'core/images/join-hero.jpg' %}) center/cover no-repeat; min-height: 70vh;">
     
     <!-- Overlay -->
@@ -28,11 +28,11 @@
 </section>
 
 <!-- Why Join Us Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container text-center">
         <h2 class="fw-bold mb-4">Why Join SocialTech?</h2>
         <div class="row g-4">
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card shadow-sm hover-lift h-100">
                     <div class="card-body">
                         <i class="fas fa-users fa-2x text-primary mb-3"></i>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card shadow-sm hover-lift h-100">
                     <div class="card-body">
                         <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card shadow-sm hover-lift h-100">
                     <div class="card-body">
                         <i class="fas fa-graduation-cap fa-2x text-primary mb-3"></i>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card shadow-sm hover-lift h-100">
                     <div class="card-body">
                         <i class="fas fa-hand-holding-usd fa-2x text-primary mb-3"></i>
@@ -73,7 +73,7 @@
 </section>
 
 <!-- Application Form Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -163,14 +163,14 @@
 </section>
 
 <!-- Open Positions Section -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Current Openings</h2>
             <p class="text-muted">Explore our available positions</p>
         </div>
         <div class="row g-4">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-start mb-3">
@@ -191,7 +191,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-start mb-3">
@@ -215,4 +215,8 @@
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'core/js/join.js' %}"></script>
 {% endblock %}

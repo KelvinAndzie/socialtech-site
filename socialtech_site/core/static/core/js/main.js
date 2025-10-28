@@ -1,11 +1,424 @@
-// SocialTech Innovations - Main JavaScript
-// Community-Driven Technology for Social Impact
+// ============================================
+// MAIN.JS - Core Global Functionality
+// Loaded on ALL pages
+// ============================================
 
 (function() {
     'use strict';
     
-    // Debounce function for performance
-    function debounce(func, wait) {
+    // ========================================
+    // 1. NAVIGATION BAR SCROLL EFFECT
+    // ========================================
+    const navbar = document.querySelector('.navbar');
+    
+    if (navbar) {
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            // Add background when scrolled
+            if (currentScroll > 50) {
+                navbar.classList.add('navbar-scrolled');
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+                navbar.style.backgroundColor = '';
+                navbar.style.boxShadow = '';
+            }
+            
+            // Hide/show navbar on scroll
+            if (currentScroll > lastScroll && currentScroll > 500) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Smooth transition
+        navbar.style.transition = 'all 0.3s ease';
+    }
+    
+    
+    // ========================================
+    // 2. MOBILE MENU TOGGLE
+    // ========================================
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const isClickInside = navbarToggler.contains(e.target) || navbarCollapse.contains(e.target);
+            
+            if (!isClickInside && navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+        
+        // Close menu when clicking nav link (mobile)
+        const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    }
+    
+    
+    // ========================================
+    // 3. BACK TO TOP BUTTON
+    // ========================================
+    function createBackToTopButton() {
+        const backToTop = document.createElement('button');
+        backToTop.id = 'back-to-top';
+        backToTop.className = 'btn btn-primary';
+        backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTop.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(43, 182, 224, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+        `;
+        
+        document.body.appendChild(backToTop);
+        
+        // Show/hide based on scroll
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+                backToTop.style.animation = 'fadeInUp 0.3s ease';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // Scroll to top on click
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Hover effect
+        backToTop.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+        });
+        
+        backToTop.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    }
+    
+    createBackToTopButton();
+    
+    
+    // ========================================
+    // 4. SMOOTH SCROLL FOR ANCHOR LINKS
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip empty anchors or just '#'
+            if (!href || href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                
+                const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 100;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    // ========================================
+    // 5. ACTIVE NAVIGATION LINK HIGHLIGHT
+    // ========================================
+    function updateActiveNavLink() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            
+            if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+                link.classList.add('active');
+                link.style.color = '#2BB6E0';
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    updateActiveNavLink();
+    
+    
+    // ========================================
+    // 6. LOADING SPINNER
+    // ========================================
+    function createLoadingSpinner() {
+        const spinner = document.createElement('div');
+        spinner.id = 'page-loader';
+        spinner.innerHTML = `
+            <div class="spinner-wrapper">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3 text-muted">Loading...</p>
+            </div>
+        `;
+        spinner.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        `;
+        
+        document.body.appendChild(spinner);
+        
+        // Hide when page loads
+        window.addEventListener('load', function() {
+            spinner.style.opacity = '0';
+            setTimeout(() => spinner.remove(), 300);
+        });
+    }
+    
+    // Only show spinner if page takes longer than 500ms to load
+    const loaderTimeout = setTimeout(createLoadingSpinner, 500);
+    window.addEventListener('load', function() {
+        clearTimeout(loaderTimeout);
+    });
+    
+    
+    // ========================================
+    // 7. LAZY LOAD IMAGES
+    // ========================================
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease';
+                    
+                    img.onload = function() {
+                        img.style.opacity = '1';
+                    };
+                    
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src], img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    
+    // ========================================
+    // 8. EXTERNAL LINKS OPEN IN NEW TAB
+    // ========================================
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+        if (!link.href.includes(window.location.hostname)) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+            
+            // Add external link icon
+            if (!link.querySelector('.fa-external-link-alt')) {
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-external-link-alt ms-1';
+                icon.style.fontSize = '0.8em';
+                link.appendChild(icon);
+            }
+        }
+    });
+    
+    
+    // ========================================
+    // 9. DETECT MOBILE DEVICE
+    // ========================================
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    if (isMobile()) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    
+    // ========================================
+    // 10. ACCESSIBILITY - KEYBOARD NAVIGATION
+    // ========================================
+    document.addEventListener('keydown', function(e) {
+        // ESC key closes modals
+        if (e.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal.show');
+            modals.forEach(modal => {
+                bootstrap.Modal.getInstance(modal)?.hide();
+            });
+        }
+        
+        // Tab trap for modals
+        if (e.key === 'Tab') {
+            const activeModal = document.querySelector('.modal.show');
+            if (activeModal) {
+                const focusableElements = activeModal.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+    });
+    
+    
+    // ========================================
+    // 11. COPY TO CLIPBOARD HELPER
+    // ========================================
+    window.copyToClipboard = function(text, successMessage = 'Copied to clipboard!') {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+                showGlobalNotification('success', successMessage);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        } else {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showGlobalNotification('success', successMessage);
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+    };
+    
+    
+    // ========================================
+    // 12. GLOBAL NOTIFICATION SYSTEM
+    // ========================================
+    window.showGlobalNotification = function(type, message, duration = 4000) {
+        // Remove existing notifications
+        const existing = document.querySelectorAll('.global-notification');
+        existing.forEach(n => n.remove());
+        
+        const notification = document.createElement('div');
+        notification.className = `alert alert-${type} alert-dismissible fade show global-notification`;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideInRight 0.3s ease;
+        `;
+        
+        notification.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'danger' ? 'exclamation-circle' : 'info-circle'} me-2"></i>
+                <div>${message}</div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, duration);
+    };
+    
+    
+    // ========================================
+    // 13. FORM CSRF TOKEN HELPER
+    // ========================================
+    window.getCSRFToken = function() {
+        return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+    };
+    
+    
+    // ========================================
+    // 14. DETECT SLOW INTERNET CONNECTION
+    // ========================================
+    if ('connection' in navigator) {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        
+        if (connection && connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+            document.body.classList.add('slow-connection');
+            showGlobalNotification('warning', 'Slow connection detected. Some features may be limited.', 6000);
+        }
+    }
+    
+    
+    // ========================================
+    // 15. PRINT PAGE HELPER
+    // ========================================
+    window.printPage = function() {
+        window.print();
+    };
+    
+    
+    // ========================================
+    // 16. DEBOUNCE HELPER (Exported globally)
+    // ========================================
+    window.debounce = function(func, wait) {
         let timeout;
         return function executedFunction(...args) {
             const later = () => {
@@ -15,324 +428,113 @@
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        try {
-            initializeNavbar();
-            initializeSmoothScroll();
-            initializeForms();
-            initializeAlerts();
-            initializeScrollAnimations();
-            initializeFileInputs();
-            initializeBackToTop();
-            initializeCounters();
-            
-            console.log('✅ SocialTech Website Loaded Successfully!');
-        } catch (error) {
-            console.error('❌ SocialTech JS Error:', error);
-        }
-    });
-
-    // ===== NAVBAR FUNCTIONALITY =====
-    function initializeNavbar() {
-        const navbar = document.querySelector('.navbar');
-        if (!navbar) return;
-        
-        const handleScroll = debounce(function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.add('shadow-sm');
+    };
+    
+    
+    // ========================================
+    // 17. THROTTLE HELPER (Exported globally)
+    // ========================================
+    window.throttle = function(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
             }
-        }, 10);
-        
-        window.addEventListener('scroll', handleScroll);
-    }
-
-    // ===== SMOOTH SCROLL =====
-    function initializeSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Update URL without jumping
-                    if (history.pushState) {
-                        history.pushState(null, null, targetId);
-                    }
-                }
-            });
-        });
-    }
-
-    // ===== FORM HANDLING =====
-    function initializeForms() {
-        const forms = document.querySelectorAll('form');
-        
-        forms.forEach(form => {
-            // Form validation
-            form.addEventListener('submit', function(e) {
-                if (!form.checkValidity()) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                form.classList.add('was-validated');
-                
-                // Prevent double submission
-                const submitBtn = form.querySelector('button[type="submit"]');
-                if (submitBtn && form.checkValidity()) {
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
-                    
-                    // Re-enable after 3 seconds as fallback
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = submitBtn.getAttribute('data-original-text') || 'Submit';
-                    }, 3000);
-                }
-            });
-            
-            // Store original button text
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.setAttribute('data-original-text', submitBtn.innerHTML);
-            }
-        });
-    }
-
-    // ===== AUTO-DISMISS ALERTS =====
-    function initializeAlerts() {
-        const alerts = document.querySelectorAll('.alert');
-        alerts.forEach(alert => {
-            if (!alert.classList.contains('alert-permanent')) {
-                setTimeout(() => {
-                    if (typeof bootstrap !== 'undefined') {
-                        const bsAlert = new bootstrap.Alert(alert);
-                        bsAlert.close();
-                    } else {
-                        alert.style.transition = 'opacity 0.5s';
-                        alert.style.opacity = '0';
-                        setTimeout(() => alert.remove(), 500);
-                    }
-                }, 5000);
-            }
-        });
-    }
-
-    // ===== SCROLL ANIMATIONS =====
-    function initializeScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
         };
+    };
+    
+    
+    // ========================================
+    // 18. INITIALIZE ALL ON DOM READY
+    // ========================================
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('%c🚀 SocialTech Innovations', 'color: #2BB6E0; font-size: 24px; font-weight: bold;');
+        console.log('%cEmpowering communities through technology', 'color: #8B4FBF; font-size: 14px;');
+        console.log('%c→ Website loaded successfully!', 'color: #28a745; font-size: 12px;');
         
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        // Observe cards and sections
-        document.querySelectorAll('.card, section').forEach(el => {
-            observer.observe(el);
-        });
-    }
+        // Add loaded class to body
+        document.body.classList.add('page-loaded');
+    });
+    
+    
+    // ========================================
+    // 19. ERROR HANDLING
+    // ========================================
+    window.addEventListener('error', function(e) {
+        console.error('Global error caught:', e.error);
+        // In production, you could send this to an error tracking service
+    });
+    
+    window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled promise rejection:', e.reason);
+    });
+    
+})();
 
-    // ===== FILE INPUT DISPLAY =====
-    function initializeFileInputs() {
-        const fileInputs = document.querySelectorAll('input[type="file"]');
-        fileInputs.forEach(input => {
-            input.addEventListener('change', function(e) {
-                const fileName = e.target.files[0]?.name;
-                if (fileName) {
-                    // Create or update file name display
-                    let fileNameDisplay = input.nextElementSibling;
-                    if (!fileNameDisplay || !fileNameDisplay.classList.contains('file-name-display')) {
-                        fileNameDisplay = document.createElement('small');
-                        fileNameDisplay.classList.add('text-muted', 'file-name-display', 'd-block', 'mt-1');
-                        input.parentNode.appendChild(fileNameDisplay);
-                    }
-                    fileNameDisplay.innerHTML = `<i class="fas fa-file me-1"></i>Selected: ${fileName}`;
-                }
-            });
-        });
-    }
 
-    // ===== BACK TO TOP BUTTON =====
-    function initializeBackToTop() {
-        const backToTop = createBackToTopButton();
-        document.body.appendChild(backToTop);
-        
-        const handleScroll = debounce(function() {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
-                backToTop.style.opacity = '1';
-            } else {
-                backToTop.style.opacity = '0';
-                setTimeout(() => {
-                    if (window.scrollY <= 300) {
-                        backToTop.style.display = 'none';
-                    }
-                }, 300);
-            }
-        }, 50);
-        
-        window.addEventListener('scroll', handleScroll);
-        
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    function createBackToTopButton() {
-        const button = document.createElement('button');
-        button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-        button.className = 'btn btn-primary position-fixed rounded-circle d-flex align-items-center justify-content-center';
-        button.setAttribute('aria-label', 'Back to top');
-        button.setAttribute('title', 'Back to top');
-        button.style.cssText = `
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            display: none;
+// ========================================
+// ADD GLOBAL ANIMATION STYLES
+// ========================================
+const globalStyles = document.createElement('style');
+globalStyles.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
             opacity: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            border: none;
-        `;
-        
-        // Hover effect
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 6px 15px rgba(0,0,0,0.4)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
-        });
-        
-        return button;
-    }
-
-    // ===== COUNTER ANIMATION =====
-    function initializeCounters() {
-        const counters = document.querySelectorAll('h2, .counter');
-        
-        counters.forEach(counter => {
-            const text = counter.textContent.trim();
-            
-            // Match numbers with optional + or K/M suffix
-            const match = text.match(/^(\d+)([+KM]*)$/);
-            if (!match) return;
-            
-            const target = parseInt(match[1]);
-            const suffix = match[2] || '';
-            const duration = 2000; // 2 seconds
-            const steps = 60;
-            const increment = target / steps;
-            let current = 0;
-            let hasAnimated = false;
-            
-            const observerCounter = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !hasAnimated) {
-                        hasAnimated = true;
-                        
-                        const updateCounter = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                counter.textContent = target + suffix;
-                                clearInterval(updateCounter);
-                            } else {
-                                counter.textContent = Math.floor(current) + suffix;
-                            }
-                        }, duration / steps);
-                        
-                        observerCounter.unobserve(counter);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-            
-            observerCounter.observe(counter);
-        });
-    }
-
-    // ===== PARALLAX EFFECT (Optional) =====
-    if (window.innerWidth > 768) {
-        const hero = document.querySelector('.hero-section');
-        if (hero) {
-            const handleParallax = debounce(function() {
-                const scrolled = window.pageYOffset;
-                hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
-            }, 10);
-            
-            window.addEventListener('scroll', handleParallax);
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
         }
     }
-
-    // ===== NAVBAR ACTIVE STATE ON SCROLL =====
-    const sections = document.querySelectorAll('section[id]');
-    if (sections.length > 0) {
-        const navHighlighter = debounce(function() {
-            let scrollY = window.pageYOffset;
-            
-            sections.forEach(current => {
-                const sectionHeight = current.offsetHeight;
-                const sectionTop = current.offsetTop - 100;
-                const sectionId = current.getAttribute('id');
-                
-                const navLink = document.querySelector('.nav-link[href*="' + sectionId + '"]');
-                if (navLink) {
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        navLink.classList.add('active');
-                    } else {
-                        navLink.classList.remove('active');
-                    }
-                }
-            });
-        }, 50);
-        
-        window.addEventListener('scroll', navHighlighter);
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-
-    // ===== LAZY LOAD IMAGES (for better performance) =====
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    observer.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+    
+    .navbar {
+        transition: all 0.3s ease !important;
     }
-
-})();
+    
+    #back-to-top:hover {
+        transform: translateY(-5px) scale(1.1) !important;
+    }
+    
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Focus visible for accessibility */
+    *:focus-visible {
+        outline: 2px solid #2BB6E0;
+        outline-offset: 2px;
+    }
+    
+    /* Mobile-specific adjustments */
+    .mobile-device .card {
+        transition: none !important;
+    }
+    
+    /* Slow connection adjustments */
+    .slow-connection img {
+        filter: blur(5px);
+        transition: filter 0.3s;
+    }
+    
+    .slow-connection img.loaded {
+        filter: none;
+    }
+`;
+document.head.appendChild(globalStyles);

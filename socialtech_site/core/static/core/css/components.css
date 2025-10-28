@@ -1,0 +1,608 @@
+/* ============================================
+   COMPONENTS.CSS - Reusable UI Components
+   ============================================ */
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-gradient {
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border: none;
+    color: white !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B4FBF, #2BB6E0);
+    transition: left 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(43, 182, 224, 0.4);
+    color: white;
+}
+
+.btn-gradient:hover::before {
+    left: 0;
+}
+
+.btn-gradient span {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card-hover {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card.border-0 {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(43, 182, 224, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+
+/* ========================================
+   ICON BOXES
+   ======================================== */
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 10px 25px rgba(43, 182, 224, 0.3);
+}
+
+.icon-box i {
+    font-size: 2rem;
+    color: white;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(43, 182, 224, 0.2);
+}
+
+
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border-radius: 2px;
+}
+
+
+/* ========================================
+   PROGRAM/SERVICE CARDS
+   ======================================== */
+
+.program-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    border-radius: 15px;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(43, 182, 224, 0.3);
+}
+
+.program-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.program-card:hover .program-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+
+/* ========================================
+   TESTIMONIAL CARDS
+   ======================================== */
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 5rem;
+    color: #2BB6E0;
+    opacity: 0.3;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-item.active {
+    display: block;
+    opacity: 1;
+}
+
+
+/* ========================================
+   TEAM MEMBER CARDS
+   ======================================== */
+
+.team-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.team-card img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover img {
+    transform: scale(1.1);
+}
+
+.team-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-overlay {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+.custom-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.custom-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(43, 182, 224, 0.3);
+}
+
+.badge.bg-light {
+    background-color: #f8f9fa !important;
+    color: #333 !important;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.badge.bg-light:hover {
+    background-color: #e9ecef !important;
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid #e0e0e0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: #2BB6E0;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #2BB6E0;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.3);
+}
+
+.timeline-item:last-child {
+    border-left: 2px solid transparent;
+}
+
+
+/* ========================================
+   NEWS/BLOG CARDS
+   ======================================== */
+
+.news-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.news-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   CTA BOX
+   ======================================== */
+
+.cta-box {
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 3s infinite;
+}
+
+
+/* ========================================
+   SOCIAL LINKS
+   ======================================== */
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2BB6E0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) rotate(5deg);
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    color: white;
+    box-shadow: 0 10px 25px rgba(43, 182, 224, 0.3);
+}
+
+
+/* ========================================
+   OFFICE HOURS
+   ======================================== */
+
+.office-hours {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-closed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+/* ========================================
+   PROJECT CARDS
+   ======================================== */
+
+.project-item {
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(10px);
+}
+
+.project-img-wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.project-img-wrapper img {
+    transition: all 0.5s ease;
+}
+
+.project-img-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   HOVER EFFECTS
+   ======================================== */
+
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(43, 182, 224, 0.5);
+}
+
+
+/* ========================================
+   FLOATING SHAPES (Hero Background)
+   ======================================== */
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: #2BB6E0;
+    border-radius: 50%;
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background: #8B4FBF;
+    border-radius: 30px;
+    animation-delay: 2s;
+}
+
+.shape:nth-child(3) {
+    bottom: 10%;
+    left: 30%;
+    width: 80px;
+    height: 80px;
+    background: #2BB6E0;
+    border-radius: 50%;
+    animation-delay: 4s;
+}
+
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.gradient-text {
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+}
+
+.text-primary-custom {
+    color: #2BB6E0 !important;
+}
+
+.text-secondary-custom {
+    color: #8B4FBF !important;
+}
+
+.bg-primary-custom {
+    background-color: #2BB6E0 !important;
+}
+
+.bg-secondary-custom {
+    background-color: #8B4FBF !important;
+}

@@ -1,643 +1,686 @@
-/* ==========================================
-   SocialTech Innovations - Custom Styles
-   Community-Driven Technology for Social Impact
-   ========================================== */
+/* ============================================
+   ENHANCED-STYLE.CSS - Unified Professional Design
+   TechSoup.org-Inspired Refinements
+   ============================================ */
 
-/* Root Variables - SocialTech Brand Colors */
+/* ========================================
+   1. DESIGN TOKENS & VARIABLES
+   ======================================== */
+
 :root {
-    --primary-color: #2BB6E0;          /* Primary Accent Blue - Trust & Innovation */
-    --secondary-color: #8B4FBF;        /* Secondary Accent Purple - Creativity */
-    --text-color: #1E2A38;             /* Text Navy - Professional */
-    --background-color: #FFFFFF;       /* Background White - Clarity */
-    --section-bg: #F8F9FA;             /* Section Background Light Gray */
-    --success-color: #198754;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    --info-color: #2BB6E0;
-    --dark-color: #1E2A38;
-    --light-color: #F8F9FA;
-    --orange-accent: #FF6B35;          /* Energy & Creativity */
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* PRIMARY COLOR PALETTE (Unified Blues) */
+    --primary-blue: #004E89;
+    --accent-blue: #007BFF;
+    --light-blue: #2BB6E0;
+    --gradient-start: #2BB6E0;
+    --gradient-end: #8B4FBF;
+    
+    /* NEUTRAL COLORS */
+    --dark-gray: #2C3E50;
+    --medium-gray: #6C757D;
+    --light-gray: #F8F9FA;
+    --border-gray: #E0E0E0;
+    
+    /* TEXT COLORS */
+    --text-primary: #2C3E50;
+    --text-secondary: #6C757D;
+    --text-muted: #999999;
+    
+    /* BACKGROUND COLORS */
+    --bg-white: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --bg-gradient: linear-gradient(135deg, #2BB6E0, #8B4FBF);
+    
+    /* SHADOWS */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.18);
+    
+    /* SPACING */
+    --section-padding: 4rem 0;
+    --container-padding: 2rem;
+    
+    /* BORDER RADIUS */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    
+    /* TYPOGRAPHY */
+    --font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --line-height-base: 1.6;
+    --line-height-heading: 1.3;
 }
 
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
+/* ========================================
+   2. TYPOGRAPHY SYSTEM (Unified & Consistent)
+   ======================================== */
 
 body {
     font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-    flex: 1;
-}
-
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Skip to content link (accessibility) */
-.visually-hidden-focusable:focus {
-    z-index: 10000;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* Headings Hierarchy */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-family);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: var(--line-height-heading);
+    color: var(--text-primary);
     margin-bottom: 1rem;
-    color: var(--text-color);
 }
 
-p {
-    margin-bottom: 1rem;
+h1, .h1 { font-size: 2.5rem; }      /* 40px */
+h2, .h2 { font-size: 2rem; }        /* 32px */
+h3, .h3 { font-size: 1.5rem; }      /* 24px */
+h4, .h4 { font-size: 1.25rem; }     /* 20px */
+h5, .h5 { font-size: 1.125rem; }    /* 18px */
+h6, .h6 { font-size: 1rem; }        /* 16px */
+
+/* Display Headings */
+.display-1 { font-size: 4rem; font-weight: 800; }
+.display-2 { font-size: 3.5rem; font-weight: 800; }
+.display-3 { font-size: 3rem; font-weight: 700; }
+.display-4 { font-size: 2.5rem; font-weight: 700; }
+
+/* Lead Text */
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
     line-height: 1.7;
+    color: var(--text-secondary);
 }
 
-/* Selection Color */
-::selection {
-    background-color: var(--primary-color);
-    color: white;
+/* Text Utilities */
+.text-muted { color: var(--text-muted) !important; }
+.text-primary { color: var(--primary-blue) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+
+/* Paragraph Styling */
+p {
+    margin-bottom: 1.5rem;
+    max-width: 75ch; /* Optimal reading width */
 }
 
-::-moz-selection {
-    background-color: var(--primary-color);
-    color: white;
+.text-center p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ==========================================
-   NAVIGATION STYLES
-   ========================================== */
+
+/* ========================================
+   3. NAVIGATION BAR (Enhanced Contrast & Logo)
+   ======================================== */
 
 .navbar {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
     transition: all 0.3s ease;
-    background-color: white !important;
 }
 
-.navbar.shadow-lg {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+.navbar.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .navbar-brand {
+    font-weight: 700;
     font-size: 1.5rem;
-    transition: transform 0.3s ease;
-    color: var(--text-color) !important;
+    color: var(--primary-blue) !important;
+    transition: all 0.3s ease;
 }
 
-.navbar-brand:hover {
-    transform: scale(1.05);
-}
-
-/* Logo Sizing */
+/* Enhanced Logo Visibility */
 .navbar-brand img {
-    height: 45px;
+    max-height: 45px; /* Increased by 25% from 36px */
     width: auto;
-    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
 }
 
 .navbar-brand:hover img {
+    filter: drop-shadow(0 4px 8px rgba(43, 182, 224, 0.3));
     transform: scale(1.05);
 }
 
-/* Navigation Links */
-.navbar-light .navbar-nav .nav-link {
-    position: relative;
-    padding: 0.5rem 1rem !important;
-    transition: all 0.3s ease;
-    color: var(--primary-color) !important;
+.navbar-nav .nav-link {
+    color: var(--text-primary);
     font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-    color: var(--secondary-color) !important;
-    transform: translateY(-2px);
-}
-
-.navbar-light .navbar-nav .nav-link.active {
-    font-weight: 600;
-    color: var(--dark-color) !important;
-}
-
-.navbar-light .navbar-nav .nav-link.active::after {
+.navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
+    width: 0;
+    height: 2px;
+    background: var(--bg-gradient);
+    transition: width 0.3s ease;
 }
 
-/* ==========================================
-   HERO SECTION STYLES
-   ========================================== */
-
-.hero-section {
-    padding: 4rem 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
 }
 
-.hero-section h1 {
-    line-height: 1.2;
-    letter-spacing: -1px;
-    text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-    animation: fadeInDown 1s ease-out;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--light-blue);
 }
 
-.hero-section .lead {
-    line-height: 1.6;
-    font-weight: 400;
-    opacity: 0.95;
-    text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
-    font-size: 1.4rem;
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
 
-.min-vh-75 {
-    min-height: 75vh;
-}
-
-/* Hero Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ==========================================
-   CARD STYLES
-   ========================================== */
-
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-    border: none;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-/* ==========================================
-   BUTTON STYLES
-   ========================================== */
+/* ========================================
+   4. UNIFIED BUTTON SYSTEM
+   ======================================== */
 
 .btn {
-    padding: 0.625rem 1.5rem;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
     border: none;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
+.btn:active {
+    transform: translateY(0);
 }
 
-.btn-lg {
-    padding: 0.875rem 2rem;
-    font-size: 1.125rem;
-}
-
+/* Primary Button (Gradient) */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background: var(--bg-gradient);
     color: white;
-    box-shadow: 0 4px 10px rgba(43, 182, 224, 0.3);
+    box-shadow: 0 4px 12px rgba(43, 182, 224, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #24a3ca;
-    border-color: #24a3ca;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(43, 182, 224, 0.4);
+    background: linear-gradient(135deg, #1fa7d1, #7a40a0);
+    box-shadow: 0 6px 20px rgba(43, 182, 224, 0.4);
+    color: white;
 }
 
+/* Outline Button */
 .btn-outline-primary {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--light-blue);
+    color: var(--light-blue);
+    background: transparent;
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
+    background: var(--light-blue);
+    color: white;
+    border-color: var(--light-blue);
 }
 
-/* ==========================================
-   FORM STYLES
-   ========================================== */
-
-.form-control,
-.form-select {
-    border-radius: 5px;
-    padding: 0.625rem 1rem;
-    border: 1px solid #dee2e6;
-    transition: all 0.3s ease;
+/* Light Button (for dark backgrounds) */
+.btn-light {
+    background: white;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.form-control:focus,
-.form-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(43, 182, 224, 0.25);
+.btn-light:hover {
+    background: #f8f9fa;
+    color: var(--light-blue);
 }
 
-.form-label {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #495057;
+/* Outline Light Button */
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
 }
 
-.invalid-feedback {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.875em;
-    color: var(--danger-color);
+.btn-outline-light:hover {
+    background: white;
+    color: var(--primary-blue);
 }
 
-/* ==========================================
-   FOOTER STYLES
-   ========================================== */
-
-footer {
-    margin-top: auto;
+/* Button Sizes */
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
 }
 
-footer a {
-    transition: all 0.3s ease;
+.btn-sm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
 }
 
-footer a:hover {
-    color: var(--primary-color) !important;
-    transform: translateX(5px);
-}
 
-.social-links a {
-    transition: all 0.3s ease;
-    display: inline-block;
-}
+/* ========================================
+   5. UNIFIED CTA SECTIONS (Consistent Gradients)
+   ======================================== */
 
-.social-links a:hover {
-    transform: translateY(-3px);
-    color: var(--primary-color) !important;
-}
-
-/* ==========================================
-   PROJECT IMAGE STYLING
-   ========================================== */
-
-.project-img-wrapper {
+.cta-section,
+.py-5.text-white[style*="background"] {
+    background: var(--bg-gradient) !important;
+    padding: 4rem 0 !important;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.project-img-wrapper img {
-    transition: transform 0.5s ease;
-    width: 100%;
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 6s infinite;
+}
+
+.cta-section * {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section h2,
+.cta-section .fw-bold {
+    color: white !important;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section .lead,
+.cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+
+/* ========================================
+   6. SECTION SPACING (Generous & Consistent)
+   ======================================== */
+
+section {
+    padding: var(--section-padding);
+}
+
+.py-5 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.my-5 {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+}
+
+.container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   7. IMAGE TREATMENT (Unified & Professional)
+   ======================================== */
+
+img {
+    max-width: 100%;
     height: auto;
+    border-radius: var(--radius-md);
 }
 
-.project-img-wrapper:hover img {
-    transform: scale(1.08);
-}
-
-.project-item {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Stagger animation for project items */
-.project-item:nth-child(1) { animation-delay: 0.1s; }
-.project-item:nth-child(2) { animation-delay: 0.2s; }
-.project-item:nth-child(3) { animation-delay: 0.3s; }
-.project-item:nth-child(4) { animation-delay: 0.4s; }
-.project-item:nth-child(5) { animation-delay: 0.5s; }
-.project-item:nth-child(6) { animation-delay: 0.6s; }
-
-/* ==========================================
-   UTILITY CLASSES
-   ========================================== */
-
-/* Hover lift effect */
-.hover-lift {
+.img-fluid {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+.img-fluid:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.02);
 }
 
-/* Object fit for consistent image sizing */
-.object-fit-cover {
-    object-fit: cover;
-}
-
-/* Badge Styles */
-.badge {
-    padding: 0.5rem 0.75rem;
-    font-weight: 500;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-/* Fade in animation */
-.animate-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Shadow Utilities */
-.shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-.shadow {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Background Colors */
-.bg-primary {
-    background-color: var(--primary-color) !important;
-}
-
-.bg-secondary {
-    background-color: var(--secondary-color) !important;
-}
-
-.bg-light {
-    background-color: var(--section-bg) !important;
-}
-
-.bg-dark {
-    background-color: var(--dark-color) !important;
-}
-
-/* Text Colors */
-.text-primary {
-    color: var(--primary-color) !important;
-}
-
-.text-secondary {
-    color: var(--secondary-color) !important;
-}
-
-.text-muted {
-    color: #6c757d !important;
-}
-
-/* ==========================================
-   CUSTOM SCROLLBAR
-   ========================================== */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #24a3ca;
-}
-
-/* ==========================================
-   LOADING & SPINNER STYLES
-   ========================================== */
-
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* ==========================================
-   ALERT STYLES
-   ========================================== */
-
-.alert {
-    border-radius: 5px;
-    border: none;
-    padding: 1rem 1.5rem;
-}
-
-/* ==========================================
-   ICON HOVER EFFECTS
-   ========================================== */
-
-.fas, .fab {
+/* Image Containers */
+.project-img-wrapper,
+.news-card,
+[class*="img-wrapper"] {
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
-.card:hover .fas,
-.card:hover .fab {
+.project-img-wrapper:hover,
+.news-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.project-img-wrapper img,
+.news-card img {
+    transition: transform 0.5s ease;
+    display: block;
+    width: 100%;
+}
+
+.project-img-wrapper:hover img,
+.news-card:hover img {
     transform: scale(1.1);
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
 
-@media (max-width: 991px) {
-    .hero-section {
-        padding: 3rem 0;
-        min-height: auto;
-    }
-    
-    .navbar-nav {
-        padding: 1rem 0;
-    }
-    
-    .nav-link {
-        padding: 0.75rem 1rem !important;
-    }
-    
-    .navbar-light .navbar-nav .nav-link.active::after {
-        display: none;
-    }
+/* ========================================
+   8. CARD SYSTEM (Consistent & Modern)
+   ======================================== */
+
+.card {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .display-3 {
-        font-size: 2.5rem !important;
-    }
-    
-    .display-4 {
-        font-size: 2rem;
-    }
-    
-    .lead {
-        font-size: 1.125rem !important;
-    }
-    
-    .btn-lg {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem !important;
-        text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .hero-section .lead {
-        font-size: 1.1rem !important;
-    }
-    
-    .navbar-brand img {
-        height: 35px;
-    }
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
 }
 
-@media (max-width: 575px) {
-    .hero-section {
-        padding: 2rem 0;
-    }
-    
-    .display-3 {
-        font-size: 2rem !important;
-    }
-    
-    .display-4 {
-        font-size: 1.75rem;
-    }
+.card-body {
+    padding: 2rem;
 }
 
-/* ==========================================
-   PRINT STYLES
-   ========================================== */
-
-@media print {
-    .navbar,
-    footer,
-    .btn,
-    .social-links {
-        display: none !important;
-    }
-    
-    body {
-        color: black;
-        background: white;
-    }
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
 }
 
-/* ==========================================
-   UTILITY & HELPER CLASSES
-   ========================================== */
-
-.rounded-circle {
-    border-radius: 50% !important;
+.card-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
-.overflow-hidden {
-    overflow: hidden !important;
+/* Stat Cards */
+.stat-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-/* Gradient Text (Optional) */
-.gradient-text {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--bg-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
 }
 
-/* Page Fade In */
-body {
-    animation: pageFadeIn 0.5s ease-in;
+.stat-card h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
-@keyframes pageFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+/* ========================================
+   9. HERO SECTION (Consistent Across Pages)
+   ======================================== */
+
+.hero-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 78, 137, 0.85), rgba(43, 182, 224, 0.75));
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+}
+
+.hero-section .lead {
+    font-size: 1.375rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ========================================
+   10. GRID & ALIGNMENT (Consistent Layout)
+   ======================================== */
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row > * {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Grid Gaps */
+.g-4 {
+    --bs-gutter-y: 2rem;
+    --bs-gutter-x: 2rem;
+}
+
+.g-5 {
+    --bs-gutter-y: 3rem;
+    --bs-gutter-x: 3rem;
+}
+
+/* Content Max Width for Readability */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   11. BACKGROUND COLORS (Unified)
+   ======================================== */
+
+.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+.bg-white {
+    background-color: var(--bg-white) !important;
+}
+
+.bg-gradient {
+    background: var(--bg-gradient) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-blue) !important;
+}
+
+
+/* ========================================
+   12. SHADOWS (Consistent System)
+   ======================================== */
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+
+/* ========================================
+   13. SCROLL ANIMATIONS (Apply to All Pages)
+   ======================================== */
+
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+[data-aos="fade-in"] {
+    opacity: 0;
+}
+
+[data-aos="fade-in"].aos-animate {
+    opacity: 1;
+}
+
+
+/* ========================================
+   14. ACCESSIBILITY & FOCUS STATES
+   ======================================== */
+
+*:focus-visible {
+    outline: 3px solid var(--light-blue);
+    outline-offset: 2px;
+}
+
+a {
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+
+/* ========================================
+   15. UTILITY CLASSES
+   ======================================== */
+
+.fw-bold { font-weight: 700 !important; }
+.fw-semibold { font-weight: 600 !important; }
+.fw-medium { font-weight: 500 !important; }
+
+.text-gradient {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.border-radius-md {
+    border-radius: var(--radius-md) !important;
+}
+
+.border-radius-lg {
+    border-radius: var(--radius-lg) !important;
 }

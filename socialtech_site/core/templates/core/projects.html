@@ -5,7 +5,7 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section position-relative text-white d-flex align-items-center" 
+<section class="hero-section position-relative text-white d-flex align-items-center" data-aos="fade-in"
          style="background: url({% static 'core/images/projects-hero.jpg' %}) center/cover no-repeat; min-height: 70vh;">
     
     <!-- Gradient Overlay (FIXED) -->
@@ -27,7 +27,7 @@
 </section>
 
 <!-- Mission Statement -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -42,7 +42,7 @@
 </section>
 
 <!-- Featured Projects with Images (Alternating Layout) -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Featured Success Stories</h2>
@@ -54,7 +54,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/education-project.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="Youth Education Initiative">
                 </div>
             </div>
@@ -88,7 +88,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/healthcare-project.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="Community Health Network">
                 </div>
             </div>
@@ -122,7 +122,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/donation-project.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="Aid Distribution Foundation">
                 </div>
             </div>
@@ -156,7 +156,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/environment-project.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="Green Earth Conservancy">
                 </div>
             </div>
@@ -190,7 +190,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/church-management.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="Church Management System">
                 </div>
             </div>
@@ -227,7 +227,7 @@
             <div class="col-md-6">
                 <div class="project-img-wrapper">
                     <img src="{% static 'core/images/school-management.jpg' %}" 
-                         class="img-fluid rounded shadow-sm" 
+                         class="img-fluid rounded shadow-sm" data-aos="zoom-in"
                          alt="School Management System">
                 </div>
             </div>
@@ -262,7 +262,7 @@
 </section>
 
 <!-- Additional Projects Grid -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">More Success Stories</h2>
@@ -270,11 +270,11 @@
         </div>
         <div class="row g-4">
             <!-- Story 5 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
                     <div class="position-relative" style="height: 200px;">
                         <img src="{% static 'core/images/women-empowerment.jpg' %}" 
-                             class="w-100 h-100 object-fit-cover" 
+                             class="w-100 h-100 object-fit-cover" data-aos="zoom-in"
                              alt="Women's Empowerment Network">
                         <div class="position-absolute top-0 start-0 w-100 h-100" 
                              style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
@@ -299,11 +299,11 @@
             </div>
 
             <!-- Story 6 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
                     <div class="position-relative" style="height: 200px;">
                         <img src="{% static 'core/images/child-welfare.jpg' %}" 
-                             class="w-100 h-100 object-fit-cover" 
+                             class="w-100 h-100 object-fit-cover" data-aos="zoom-in"
                              alt="Children's Hope Foundation">
                         <div class="position-absolute top-0 start-0 w-100 h-100" 
                              style="background: linear-gradient(to bottom, rgba(139,79,191,0.3), rgba(139,79,191,0.7));"></div>
@@ -328,11 +328,11 @@
             </div>
 
             <!-- Story 7 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
                     <div class="position-relative" style="height: 200px;">
                         <img src="{% static 'core/images/agriculture-tech.jpg' %}" 
-                             class="w-100 h-100 object-fit-cover" 
+                             class="w-100 h-100 object-fit-cover" data-aos="zoom-in"
                              alt="SmartFarm Initiative">
                         <div class="position-absolute top-0 start-0 w-100 h-100" 
                              style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
@@ -357,11 +357,11 @@
             </div>
 
             <!-- Story 8: Church Management Preview -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
                     <div class="position-relative" style="height: 200px;">
                         <img src="{% static 'core/images/church-card.jpg' %}" 
-                             class="w-100 h-100 object-fit-cover" 
+                             class="w-100 h-100 object-fit-cover" data-aos="zoom-in"
                              alt="Church Management System">
                         <div class="position-absolute top-0 start-0 w-100 h-100" 
                              style="background: linear-gradient(to bottom, rgba(43,182,224,0.3), rgba(43,182,224,0.7));"></div>
@@ -387,11 +387,11 @@
             </div>
 
             <!-- Story 9: School Management Preview -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm overflow-hidden">
                     <div class="position-relative" style="height: 200px;">
                         <img src="{% static 'core/images/school-card.jpg' %}" 
-                             class="w-100 h-100 object-fit-cover" 
+                             class="w-100 h-100 object-fit-cover" data-aos="zoom-in"
                              alt="School Management System">
                         <div class="position-absolute top-0 start-0 w-100 h-100" 
                              style="background: linear-gradient(to bottom, rgba(139,79,191,0.3), rgba(139,79,191,0.7));"></div>
@@ -420,14 +420,14 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">What Our Partners Say</h2>
             <p class="text-muted">Hear directly from the leaders we've worked with</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
                         <div class="mb-3">
@@ -451,7 +451,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
                         <div class="mb-3">
@@ -475,7 +475,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
                         <div class="mb-3">
@@ -503,7 +503,7 @@
 </section>
 
 <!-- Impact Stats -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Our Collective Impact</h2>
@@ -543,14 +543,14 @@
 </section>
 
 <!-- Sectors We Serve -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-in">
     <div class="container">
         <div class="text-center mb-5">
             <h3 class="fw-bold">Sectors We Serve</h3>
             <p class="text-muted">Supporting diverse causes across multiple sectors</p>
         </div>
         <div class="row g-3">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-graduation-cap fa-2x mb-2" style="color: #2BB6E0;"></i>
@@ -558,7 +558,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-heartbeat fa-2x mb-2" style="color: #8B4FBF;"></i>
@@ -566,7 +566,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-leaf fa-2x mb-2" style="color: #2BB6E0;"></i>
@@ -574,7 +574,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-hands-helping fa-2x mb-2" style="color: #8B4FBF;"></i>
@@ -582,7 +582,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-balance-scale fa-2x mb-2" style="color: #2BB6E0;"></i>
@@ -590,7 +590,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-child fa-2x mb-2" style="color: #8B4FBF;"></i>
@@ -598,7 +598,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-venus fa-2x mb-2" style="color: #2BB6E0;"></i>
@@ -606,7 +606,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card border-0 shadow-sm hover-lift">
                     <div class="card-body text-center p-3">
                         <i class="fas fa-seedling fa-2x mb-2" style="color: #8B4FBF;"></i>
@@ -619,8 +619,8 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-5 text-white" style="background-color: #2BB6E0;">
-    <div class="container text-center">
+<section class="cta-section text-black text-center">
+    <div class="container">
         <h2 class="fw-bold mb-3">Ready to Write Your Success Story?</h2>
         <p class="lead mb-4">
             Let's work together to amplify your organization's impact through technology
@@ -635,4 +635,8 @@
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'core/js/projects.js' %}"></script>
 {% endblock %}
